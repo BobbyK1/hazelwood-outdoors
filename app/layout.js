@@ -1,3 +1,4 @@
+import './globals.css'
 import Footer from "./components/footer";
 import Header from "./components/header";
 import { Provider } from "./components/ui/provider";
