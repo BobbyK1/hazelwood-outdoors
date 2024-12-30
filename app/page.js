@@ -4,6 +4,13 @@ import { Box, Center, Container, Flex, Grid, GridItem, Heading, Image, Input, Se
 import { Build, Check, Conversation, Design, Down } from "./components/icons";
 import { Button } from "./components/ui/button";
 import Link from "next/link";
+import { Nothing_You_Could_Do } from 'next/font/google'
+
+const nothing = Nothing_You_Could_Do({
+	subsets: ['latin'],
+	display: 'swap',
+	weight: '400'
+})
 
 export default function Home() {
 	return (
@@ -19,7 +26,7 @@ export default function Home() {
 										<Separator borderColor="#8cc342" maxW="52" />
 									</Stack>
 									
-									<Heading mb="10" as="h1" fontSize={["4xl", "4xl", "6xl"]} textAlign={["center", "center", "left"]} lineHeight="1.5">Stunning Landscapes <br /> To Inspire Your Family</Heading>
+									<Heading mb="10" as="h1" fontSize={["4xl", "4xl", "6xl"]} textAlign={["center", "center", "left"]} lineHeight="1.5">Stunning Landscapes <br /> To <Text  as="span" color="#8cc342" className={nothing.className}>Inspire</Text> Your Family</Heading>
 
 									<Text as={Link} href="#about" fontSize="xl" textAlign={["center", "center", "left"]} >Scroll Down <Down /></Text>
 									
@@ -203,6 +210,12 @@ export default function Home() {
 					</Center>
 
 				</Box>
+
+				<Container>
+					<Box w="full" py="10" px="5">
+						
+					</Box>
+				</Container>
 			</Box>
 		</>
 	);
