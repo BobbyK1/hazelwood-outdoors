@@ -1,10 +1,11 @@
 import { Box, Center, Circle, Container, Flex, Grid, GridItem, Heading, Image, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
-import { Build, Check, Conversation, Design, Down, Insta, Layout, Options, Price, Size, UpwardTrend } from "./components/icons";
+import { Build, Check, Conversation, Design, Down, Facebook, Google, Insta, Layout, Options, Price, Size, UpwardTrend, Yelp } from "./components/icons";
 import { Button } from "./components/ui/button";
 import Link from "next/link";
 import { Nothing_You_Could_Do, Playfair_Display } from 'next/font/google'
 import AnimatedSteps from "./components/ui/animated-steps";
 import { Avatar } from "./components/ui/avatar";
+import StarGroup from "./components/ui/star-group";
 
 const nothing = Nothing_You_Could_Do({
 	subsets: ['latin'],
@@ -217,15 +218,15 @@ export default function Home() {
 				</Box>
 
 				<Container maxW="7xl">
-					<Box color="whitesmoke" position="relative" w="full" borderRadius="5px" bgImage="url('https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-						<Box py="20" px="14" borderRadius="5px" shadow="2xl" bgColor="rgba(0,0,0,0.55)">
+					<Box color="whitesmoke" w="full" borderRadius="5px" bgImage="url('https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+						<Box py="20" px={[5, 5, 5, 14]} borderRadius="5px" shadow="2xl" bgColor="rgba(0,0,0,0.55)">
 							<Stack direction="row" gap="5" alignItems="center" mb="6">
 								<Text fontSize="xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">All Phases Of Landscaping</Text>
 								<Separator borderColor="#8cc342" maxW="24" />
 							</Stack>
 
-							<Grid templateColumns="repeat(12, 1fr)" gap="10">
-								<GridItem colSpan="7">
+							<SimpleGrid columns="3" gap="10">
+								<GridItem colSpan={[3, 3, 3, 2]}>
 									<Text fontWeight="bold" fontSize="4xl">We draw inspiration from nature</Text>
 
 									<Text fontSize="md" mt="5">Well done landscape design can add a considerable amount of value to your property, not to mention, increase the aesthetic appeal, and provide a great first impression on guests or potential customers.</Text>
@@ -291,27 +292,26 @@ export default function Home() {
 									</Grid>
 								</GridItem>
 
-								<GridItem colSpan="5" alignContent="end">
-									<Box h="18em" w="full" padding="5" bgColor="white" borderRadius="5px">
+								<GridItem colSpan={[3, 3, 3, 1]} alignContent="end">
+									<Box h="fit-content" w="full" padding="5" bgColor="white" borderRadius="5px">
 										<Text fontSize="3xl" color="black" fontWeight="extrabold">Get a quote</Text>
 
 										<Textarea w="full" placeholder="Message" mt="3" />
 
-										<Stack direction="row" gap="3" mt="3">
+										<Stack direction={["column", "column", "column", "row"]} gap="3" mt="3">
 											<Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="First Name" />
 											<Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="Last Name" />
 										</Stack>
-										<Stack direction="row" gap="3" mt="3">
+										<Stack mb="6" direction={["column", "column", "column", "row"]} gap="3" mt="3">
 											<Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="Phone" />
 											<Input type="email" variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="Email" />
 										</Stack>
-
-										<Center mt="1.2em">
-											<Button minW="20em" size="xl" color="white" bgColor="rgba(140,195,66,1)" _hover={{ transform: 'scale(1.02)' }}>Send Message</Button>
-										</Center>
 									</Box>
+									<Center mt="-1.3em">
+										<Button maxW="20em" minW="14em" size="xl" color="white" bgColor="rgba(140,195,66,1)" _hover={{ transform: 'scale(1.02)' }}>Send Message</Button>
+									</Center>
 								</GridItem>
-							</Grid>
+							</SimpleGrid>
 						</Box>
 					</Box>
 				</Container>
@@ -326,27 +326,27 @@ export default function Home() {
 
 					<Text fontSize="4xl" fontWeight="bold" textAlign="center">Recent <Text as="span" className={nothing.className} color="#8cc342">Projects</Text></Text>
 
-					<Grid templateColumns="repeat(12, 1fr)" gap="4" mt="10">
-						<GridItem colSpan="5">
-							<Image h="250px" src="https://placehold.co/650x250" />
+					<SimpleGrid columns="12" mt="10" gap="4">
+						<GridItem colSpan={[12, 12, 6, 5]}>
+							<Image h="250px" w="full" objectFit="cover" src="https://placehold.co/650x250" />
 						</GridItem>
-						<GridItem colSpan="3">
-							<Image h="250px" src="https://placehold.co/400x250" />
+						<GridItem colSpan={[12, 12, 6, 4]}>
+							<Image h="250px" w="full" objectFit="cover" src="https://placehold.co/650x250" />
 						</GridItem>
-						<GridItem colSpan="4">
-							<Image h="250px" src="https://placehold.co/550x250" />
+						<GridItem colSpan={[12, 12, 6, 3]}>
+							<Image h="250px" w="full" objectFit="cover" src="https://placehold.co/650x250" />
 						</GridItem>
-
-						<GridItem colSpan="6">
-							<Image h="250px" src="https://placehold.co/650x250" />
+						
+						<GridItem colSpan={[12, 12, 6, 4]}>
+							<Image h="250px" w="full" objectFit="cover" src="https://placehold.co/650x250" />
 						</GridItem>
-						<GridItem colSpan="3">
-							<Image h="250px" src="https://placehold.co/400x250" />
+						<GridItem colSpan={[12, 12, 6, 5]}>
+							<Image h="250px" w="full" objectFit="cover" src="https://placehold.co/650x250" />
 						</GridItem>
-						<GridItem colSpan="3">
-							<Image h="250px" src="https://placehold.co/550x250" />
+						<GridItem colSpan={[12, 12, 6, 3]}>
+							<Image h="250px" w="full" objectFit="cover" src="https://placehold.co/650x250" />
 						</GridItem>
-					</Grid>
+					</SimpleGrid>
 				</Container>
 
 				<Container maxW="8xl" mt="20">
@@ -360,28 +360,28 @@ export default function Home() {
 					<Text fontSize="4xl" fontWeight="bold" textAlign="center">Follow Us On <Text as="span" className={nothing.className} color="#8cc342">Instagram</Text></Text>
 				
 					<Grid templateColumns="repeat(12, 1fr)" mt="10" gap="4">
-						<GridItem colSpan="3">
+						<GridItem colSpan={[6, 6, 3, 3]}>
 							<Image src="https://placehold.co/550" />
 						</GridItem>
-						<GridItem colSpan="3">
+						<GridItem colSpan={[6, 6, 3, 3]}>
 							<Image src="https://placehold.co/550" />
 						</GridItem>
-						<GridItem colSpan="3">
+						<GridItem colSpan={[6, 6, 3, 3]}>
 							<Image src="https://placehold.co/550" />
 						</GridItem>
-						<GridItem colSpan="3">
+						<GridItem colSpan={[6, 6, 3, 3]}>
 							<Image src="https://placehold.co/550" />
 						</GridItem>
-						<GridItem colSpan="3">
+						<GridItem colSpan={[6, 6, 3, 3]}>
 							<Image src="https://placehold.co/550" />
 						</GridItem>
-						<GridItem colSpan="3">
+						<GridItem colSpan={[6, 6, 3, 3]}>
 							<Image src="https://placehold.co/550" />
 						</GridItem>
-						<GridItem colSpan="3">
+						<GridItem colSpan={[6, 6, 3, 3]}>
 							<Image src="https://placehold.co/550" />
 						</GridItem>
-						<GridItem colSpan="3">
+						<GridItem colSpan={[6, 6, 3, 3]}>
 							<Image src="https://placehold.co/550" />
 						</GridItem>
 					</Grid>
@@ -392,8 +392,8 @@ export default function Home() {
 				</Container>
 
 				<Box mb="60" h="45em" mt="20" w="full" bgPos="center" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1734079692147-c6fc9438a2d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dx')">
-					<Box h="45em" py="20" px="14" borderRadius="5px" shadow="2xl" bgColor="rgba(0,0,0,0.45)">
-						<Box ml="20em" mt="15em" maxW="md">
+					<Box h="45em" py="20" px={[5, 5, 5, 14]} borderRadius="5px" shadow="2xl" bgColor="rgba(0,0,0,0.45)">
+						<Box ml={[0, 0, 0, "20em"]} mt="15em" maxW="md">
 							<Stack direction="row" gap="5" alignItems="center" mb="6">
 								<Text fontSize="xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Our Process</Text>
 								<Separator borderColor="#8cc342" minW="24" maxW="24" />
@@ -416,7 +416,7 @@ export default function Home() {
 								<Input type="text" placeholder="Phone" mt="4" />
 
 								<Center mt="1em">
-									<Button minW="20em" size="xl" color="white" bgColor="rgba(140,195,66,1)" _hover={{ transform: 'scale(1.02)' }}>Send Message</Button>
+									<Button maxW="20em" minW="14em" size="xl" color="white" bgColor="rgba(140,195,66,1)" _hover={{ transform: 'scale(1.02)' }}>Send Message</Button>
 								</Center>
 							</Box>
 						</Box>
@@ -434,12 +434,12 @@ export default function Home() {
 					</Stack>
 				</Container>
 
-				<Container maxW="5xl" mt="20" zIndex="999">
+				<Box maxW="5xl" mx="auto" mt="20" position="relative" zIndex="999">
 					<Box w="full">
-						<Image w="full" objectFit="cover" src="https://placehold.co/700x650" />
+						<Image h={["20em", "", "", "40em"]} w="full" objectFit="cover" src="https://placehold.co/700x650" />
 						<Box bgColor="#F3F2EF">
-							<SimpleGrid columns="2">
-								<Box p="14">
+							<SimpleGrid columns={[1, 1, 2, 2]}>
+								<Box p="10" pb="0">
 									<Box bgColor="white" p="4">
 										<Text fontSize="lg" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Project Recap</Text>
 										<SimpleGrid columns="2" mt="5" gap="5">
@@ -481,7 +481,7 @@ export default function Home() {
 										</SimpleGrid>
 									</Box>
 								</Box>
-								<Box py="14" pr="10">
+								<Box py="14" px="10">
 									<Text fontSize="sm">“We really wanted to build an outdoor space that set our clients up for doing what they love to do most with their family; entertaining and unwinding in the backyard together.</Text>
 								
 									<Text fontSize="sm" mt="5"><Text as="span" fontWeight="bold">One of the signature spaces is the stone fireplace, where they enjoy the relaxing ambience at night.</Text> We love how much our clients really show up in all the details.”</Text>
@@ -497,13 +497,13 @@ export default function Home() {
 							</SimpleGrid>
 						</Box>
 					</Box>
-				</Container>
+				</Box>
 
-				<Box h={["37em", "45em",  "70em"]} mt="-12em" zIndex="-99">
-					<Box h={["35em", "70em"]} w="full" position="relative" bgImage="url('https://images.unsplash.com/photo-1601654253194-260e0b6984f9?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" bgSize="cover" bgPos="center">
-						<Box h="full" w="full" px="5" py="5" position="absolute" top="0" left="0" right="0" background="linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.95))">
-							<Box position="relative" w="full" borderWidth="2px" borderColor="#8cc342" h="full" pt="56">
-								<Flex px="2" direction="column" w="full" h="full" mt="20" alignItems="center" color="whitesmoke	">
+				<Box h="fit-content" mt={["0", "", "", "-12em"]} zIndex="-99">
+					<Box h="fit-content" w="full"  bgImage="url('https://images.unsplash.com/photo-1601654253194-260e0b6984f9?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" bgSize="cover" bgPos="center">
+						<Box h="full" w="full" px="5" py="5" top="0" left="0" right="0" background="linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.95))">
+							<Box w="full" borderWidth="2px" borderColor="#8cc342" h="full" pt="56">
+								<Flex px="2" direction="column" w="full" h="full" mt={["0", "", "", "20"]} alignItems="center" color="whitesmoke">
 									<Stack direction="row" gap="5" alignItems="center" mb="6">
 										<Text fontSize="xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Hardscaping</Text>
 										<Separator borderColor="#8cc342" minW="24" maxW="24" />
@@ -515,7 +515,7 @@ export default function Home() {
 									
 									<Text fontSize="sm" textAlign="center" mt="5">From custom patios and walkways, to walls and custom structures, we have your back! Some of our specialties include:</Text>
 								
-									<SimpleGrid columns="3" gap="10" mt="10">
+									<SimpleGrid columns={[1, 1, 2, 2, 3]} gap="2" my="10">
 										<Box bgImage="url('https://placehold.co/350x200')" p="3" w="350px" h="200px">
 											<Text fontSize="2xl" fontWeight="bold">Patios</Text>
 										</Box>
@@ -540,8 +540,8 @@ export default function Home() {
 						</Box>
 					</Box>
 				</Box>
-				<Box py="44" bgColor="#29282d">
-					<SimpleGrid columns="2" maxW="5xl" mx="auto">
+				<Box py="44" px="10" bgColor="#29282d">
+					<SimpleGrid columns={[1, 1, 1, 2]} maxW="5xl" mx="auto" gap="10">
 						<Box color="whitesmoke">
 							<Text fontSize="4xl" fontWeight="bold" className={playfair.className}>Schedule a Free <br /> Consultation Call</Text>
 
@@ -564,29 +564,29 @@ export default function Home() {
 						</Box>
 					</SimpleGrid>
 				</Box>
-				<Box h={["37em", "45em",  "50em"]}zIndex="-99">
-					<Box h={["35em", "50em"]} w="full" position="relative" bgImage="url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" bgSize="cover" bgPos="center">
-						<Box h="full" w="full" px="5" py="5" position="absolute" top="0" left="0" right="0" background="linear-gradient(to bottom right, rgba(0,0,0,0.2), rgba(0,0,0,0.9))">
-							<Box position="relative" w="full" borderWidth="2px" borderColor="#8cc342" h="full">
-								<Flex px="2" direction="column" w="full" h="full" justifyContent="center" alignItems="center">
-									<Box w="3xl" bgColor="white" borderRadius="5px" px="14" py="14" shadow="2xl">
-										<Text fontSize="4xl" className={playfair.className}>Stunning <Text as="span" color="#8cc342">Landscape Design</Text> Increases Curb Appeal & Home Value</Text>
+				<Box h="fit-content" zIndex="-99">
+					<Box h="fit-content" w="full" bgImage="url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" bgSize="cover" bgPos="center">
+						<Box h="full" w="full" px="5" py="5" background="linear-gradient(to bottom right, rgba(0,0,0,0.2), rgba(0,0,0,0.9))">
+							<Box w="full" borderWidth="2px" borderColor="#8cc342" h="fit-content">
+								<Flex px="2" direction="column" h="full" justifyContent="center" alignItems="center">
+									<Box my="10" maxW="3xl" bgColor="white" borderRadius="5px" p="12" shadow="2xl">
+										<Text fontSize={["2xl", "", "", "4xl"]} className={playfair.className}>Stunning <Text as="span" color="#8cc342">Landscape Design</Text> Increases Curb Appeal & Home Value</Text>
 									
 										<Text mt="10" color="blackAlpha.800" fontWeight="medium">National Association of Realtor data shows that quality landscape designs increase curb appeal as well as home value. This means your home gets more attention and can sell much quicker – plus, demands a higher sales price!</Text>
 
-										<Grid  templateColumns="repeat(12, 1fr)" gap="10" mt="10">
-											<GridItem colSpan="2" alignContent="center">
+										<SimpleGrid columns="5" gap="10" mt="10">
+											<GridItem colSpan={[5, 5, 5, 1]} alignContent="center">
 												<UpwardTrend color="#8cc342" fontSize="5xl" />
 											</GridItem>
 
-											<GridItem colSpan="10">
+											<GridItem colSpan={[5, 5, 5, 4]}>
 												<Text fontSize="2xl" fontWeight="bold">Add value to your home</Text>
 
 												<Text fontSize="sm" mt="2">Landscape design typically adds 8-12% to home value according to National Association of Realtor data.</Text>
 											</GridItem>
-										</Grid>
-										<Grid templateColumns="repeat(12, 1fr)" gap="10" mt="10">
-											<GridItem colSpan="2" alignContent="center">
+										</SimpleGrid>
+										<SimpleGrid columns="5" gap="10" mt="10">
+											<GridItem colSpan={[5, 5, 5, 1]} alignContent="center">
 												<Stack direction="row" color="#8cc342" alignItems="center" gap="-2">
 													<Text fontSize="6xl">0</Text>
 													<Box>
@@ -596,14 +596,14 @@ export default function Home() {
 												</Stack>
 											</GridItem>
 
-											<GridItem colSpan="10">
+											<GridItem colSpan={[5, 5, 5, 4]}>
 												<Box>
 													<Text fontSize="2xl" fontWeight="bold">Low, affordable payments</Text>
 
 													<Text fontSize="sm" mt="2">Reduce your out of pocket cost with financing. Our bank is ready to get you approved quickly.</Text>
 												</Box>
 											</GridItem>
-										</Grid>
+										</SimpleGrid>
 									</Box>
 								</Flex>
 							</Box>
@@ -611,13 +611,13 @@ export default function Home() {
 					</Box>
 				</Box>
 
-				<Box py="20" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 35%)">
-					<Text alignItems="center" fontSize="6xl" textAlign="center" fontWeight="bold">Hazelwood Outdoors <Text as="span" color="#8cc342" fontSize="3xl" fontStyle="italic" fontWeight="normal">mission & values</Text></Text>
+				<Box py="20" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 75%, #fff 100%)">
+					<Text alignItems="center" fontSize={["2xl", "", "", "6xl"]} textAlign="center" fontWeight="bold">Hazelwood Outdoors <Text as="span" color="#8cc342" fontSize="xl" fontStyle="italic" fontWeight="normal">mission & values</Text></Text>
 				
-					<SimpleGrid columns="2" mt="16" maxW="8xl" mx="auto">
+					<SimpleGrid columns={[1, 1, 1, 2]} mt="16" maxW="8xl" mx="auto" gap="10">
 						<Box>
 							<Stack spacing={4} align="center">
-								<Box w="450px" h="300px" overflow="hidden" borderRadius="md" boxShadow="md">
+								<Box w="full" h="300px" overflow="hidden" borderRadius="md" boxShadow="md">
 									<Image
 									src="https://images.unsplash.com/photo-1711112155287-527d5aa273ad?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 									alt="Hydrangeas"
@@ -629,10 +629,10 @@ export default function Home() {
 									borderRadius="md"
 									boxShadow="md"
 									mt="-10em"
-									ml="15em"
+									ml={["10em", "", "", "15em"]}
 								>
 									<Image
-									w="450px" h="300px"
+									w="475px" h="300px"
 									src="https://images.unsplash.com/photo-1605684437254-344f03b1e65c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 									alt="Fountain"
 									objectFit="cover"
@@ -646,6 +646,84 @@ export default function Home() {
 							<Text mt="5">We are Disciplined and Results Oriented. Our core values are the backbone of our business: we are Inspirational, Aligned, Transparent, and Accountable.</Text>
 						</Box>
 					</SimpleGrid>
+
+					<Container maxW="6xl" mt="20">
+						<Stack direction={["column", "", "row", "row"]} alignItems="start" h="fit-content">
+							<Text fontSize={["9xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">15</Text>
+							<Text fontSize="2xl" mt={["0", "", "1.5em", "3em"]} fontWeight="bold">% Avg Increase <br /> In Home Value</Text>
+						</Stack>
+						<Stack mt={["0", "", "-7em", "-17em"]} direction={["column", "", "row", "row"]} alignItems="start" h="fit-content" ml={[0, 0, "auto", "auto"]} w="fit-content">
+							<Text fontSize={["9xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">297</Text>
+							<Text fontSize="2xl" mt={["0", "", "1.5em", "3em"]} fontWeight="bold">Breathtaking <br /> Spaces Created</Text>
+						</Stack>
+						<Stack mt={["0", "", "-2em", "-5em"]} direction={["column", "", "row", "row"]} alignItems="start" h="fit-content" w="fit-content" mx={[0, 0, "auto", "auto"]}>
+							<Text fontSize={["9xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">14,567</Text>
+							<Box>
+								<Text fontSize="2xl" mt={["0", "", "1.5em", "3em"]} fontWeight="bold">Hydrangeas Planted*</Text>
+								<Text fontSize="xl" fontStyle="italic">*Guesstimate. We don’t actually count.</Text>
+							</Box>
+						</Stack>
+					</Container>
+				</Box>
+
+				<Box mt="20">
+					<Container maxW="6xl">
+						<Text alignItems="center" fontSize={["3xl", "", "", "6xl"]} textAlign="center" fontWeight="bold" className={playfair.className}>Meet The Design Team</Text>
+
+						<SimpleGrid columns={[1, 1, 1, 2]} gap="5" mt="10">
+							<Box>
+								<Box w="96" h="25em" shadow="2xl" bgImage="url('https://placehold.co/450')" bgSize="cover" bgPos="center" mx="auto" />
+								<Text fontSize="xl" textAlign="center" fontWeight="bold" mt="8">John Doe</Text>
+								<Text fontSize="xl" textAlign="center" fontStyle="italic" color="blackAlpha.700" mt="-2">Executive Designer</Text>
+							</Box>
+							<Box alignContent="center">
+								<Text>Your custom landscape should be an extension of your vision, tastes, and lifestyle. At Applewood Landscaping, our designs are the result of careful listening and good communication, combined with creativity, quality workmanship and materials, and years of expertise.</Text>
+							
+								<Text mt="5">At Applewood Landscaping, we know that each and every one of our ‘projects’ is someone’s home; that our ‘customers’ are families. Every single day, we work with real people.</Text>
+							
+								<Text mt="5">Our design team is the best!</Text>
+
+								<Button w="fit-content" variant="solid" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }} color="whitesmoke" size="2xl" mt="10">Design Now</Button>
+							</Box>
+						</SimpleGrid>
+					</Container>
+				</Box>
+
+				<Box mt="20">
+					<Container maxW="6xl">
+						<Text fontSize={["3xl", "", "", "6xl"]} textAlign="center" fontWeight="bold" className={playfair.className}>Our Reputation Speaks for Itself</Text>
+					
+						<Text fontSize="md" textAlign="center" mt="5">Read what our happy customers are saying about their experience of working with us.</Text>
+
+						<SimpleGrid columns="3" mt="20">
+							<Stack direction="column" alignItems="center">
+								<StarGroup fontSize="4xl" color="#F8D7A7" />
+								<Stack direction="row" alignItems="center" gap="2" mt="4">
+									<Google color="#e8414b"  fontSize="xl" />
+									<Text fontWeight="bold" color="#e8414b" textTransform="uppercase" textAlign="center">Google Rating</Text>	
+								</Stack>
+								<Text color="#e8414b" textTransform="uppercase" textAlign="center">4.3 Stars</Text>
+							</Stack>
+
+							<Stack direction="column" alignItems="center">
+								<StarGroup fontSize="4xl" color="#F8D7A7" />
+								<Stack direction="row" alignItems="center" gap="2" mt="4">
+									<Yelp color="#e8414b"  fontSize="xl" />
+									<Text fontWeight="bold" color="#e8414b" textTransform="uppercase" textAlign="center">Yelp Rating</Text>	
+								</Stack>
+								<Text color="#e8414b" textTransform="uppercase" textAlign="center">4.3 Stars</Text>
+							</Stack>
+
+							<Stack direction="column" alignItems="center">
+								<StarGroup fontSize="4xl" color="#F8D7A7" />
+								<Stack direction="row" alignItems="center" gap="2" mt="4">
+									<Facebook color="#e8414b"  fontSize="xl" />
+									<Text fontWeight="bold" color="#e8414b" textTransform="uppercase" textAlign="center">Faceboook Rating</Text>	
+								</Stack>
+								<Text color="#e8414b" textTransform="uppercase" textAlign="center">4.3 Stars</Text>
+							</Stack>
+						</SimpleGrid>
+					</Container>
 				</Box>
 			</Box>
 		</>
