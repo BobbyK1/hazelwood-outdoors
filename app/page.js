@@ -206,16 +206,14 @@ export default function Home() {
 				</Box>
 
 
-				<Box my="32">
-					<Box px="10" py="20" bg="linear-gradient(90deg, #e9efe5 0%, #fffbf9 35%)" maxW="4xl" mx="auto" borderRadius="md" shadow="2xl">
-						<Text fontSize="6xl" textAlign="center" className={playfair.className}>Already Have A Design?</Text>
+				<Box my="44">
+					<Text fontSize="6xl" textAlign="center" className={playfair.className}>Already Have A Design?</Text>
 
-						<Text fontSize="lg" textAlign="center" my="10" fontWeight="semibold">We also offer a build-only service as well. <br /> Click the button below to learn more.</Text>
+					<Text fontSize="lg" textAlign="center" my="10" fontWeight="semibold">We also offer a build-only service as well. <br /> Click the button below to learn more.</Text>
 
-						<Center>
-							<Button borderRadius="0" w="fit-content" variant="solid" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }} color="whitesmoke" size="2xl">Build-Only Serivce</Button>
-						</Center>
-					</Box>
+					<Center>
+						<Button borderRadius="0" w="fit-content" variant="solid" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }} color="whitesmoke" size="2xl">Build-Only Serivce</Button>
+					</Center>
 				</Box>
 
 				<Container maxW="7xl">
@@ -393,7 +391,7 @@ export default function Home() {
 					</Center>
 				</Container>
 
-				<Box mb="60" h="45em" mt="20" w="full" bgPos="center" bgImage="url('https://images.unsplash.com/photo-1734079692147-c6fc9438a2d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dx')">
+				<Box mb="60" h="45em" mt="20" w="full" bgPos="center" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1734079692147-c6fc9438a2d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dx')">
 					<Box h="45em" py="20" px="14" borderRadius="5px" shadow="2xl" bgColor="rgba(0,0,0,0.45)">
 						<Box ml="20em" mt="15em" maxW="md">
 							<Stack direction="row" gap="5" alignItems="center" mb="6">
@@ -542,7 +540,7 @@ export default function Home() {
 						</Box>
 					</Box>
 				</Box>
-				<Box py="20" bgColor="#29282d">
+				<Box py="44" bgColor="#29282d">
 					<SimpleGrid columns="2" maxW="5xl" mx="auto">
 						<Box color="whitesmoke">
 							<Text fontSize="4xl" fontWeight="bold" className={playfair.className}>Schedule a Free <br /> Consultation Call</Text>
