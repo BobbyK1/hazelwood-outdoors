@@ -2,6 +2,14 @@ import './globals.css'
 import Footer from "./components/footer";
 import Header from "./components/header";
 import { Provider } from "./components/ui/provider";
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+	subsets: ["latin"],
+	weight: ['100','200','300','400','500','600','700','800','900'],
+	display: 'auto',
+	style: ["normal", "italic"]
+})
 
 export const metadata = {
 	title: "Hazelwood Outdoors",
@@ -11,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body>
+			<body className={poppins.className}>
 				<Provider>
 					<Header />
 					{children}

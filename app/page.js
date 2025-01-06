@@ -1,15 +1,21 @@
-import NextImage from "next/image";
-import styles from "./page.module.css";
-import { Box, Center, Container, Flex, Grid, GridItem, Heading, Image, Input, Separator, SimpleGrid, Stack, Text } from "@chakra-ui/react";
-import { Build, Check, Conversation, Design, Down } from "./components/icons";
+import { Box, Center, Circle, Container, Flex, Grid, GridItem, Heading, Image, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
+import { Build, Check, Conversation, Design, Down, Insta, Layout, Options, Price, Size, UpwardTrend } from "./components/icons";
 import { Button } from "./components/ui/button";
 import Link from "next/link";
-import { Nothing_You_Could_Do } from 'next/font/google'
+import { Nothing_You_Could_Do, Playfair_Display } from 'next/font/google'
+import AnimatedSteps from "./components/ui/animated-steps";
+import { Avatar } from "./components/ui/avatar";
 
 const nothing = Nothing_You_Could_Do({
 	subsets: ['latin'],
 	display: 'swap',
-	weight: '400'
+	weight: ['400']
+})
+
+const playfair = Playfair_Display({
+	subsets: ['latin'],
+	weight: ['400'],
+	display: "swap",
 })
 
 export default function Home() {
@@ -26,7 +32,7 @@ export default function Home() {
 										<Separator borderColor="#8cc342" maxW="52" />
 									</Stack>
 									
-									<Heading mb="10" as="h1" fontSize={["4xl", "4xl", "6xl"]} textAlign={["center", "center", "left"]} lineHeight="1.5">Stunning Landscapes <br /> To <Text  as="span" color="#8cc342" className={nothing.className}>Inspire</Text> Your Family</Heading>
+									<Heading mb="10" as="h1" fontSize={["4xl", "4xl", "6xl"]} textAlign={["center", "center", "left"]} lineHeight="1.5">Stunning Landscapes <br /> To <Text fontWeight="bold" as="span" color="#8cc342" className={nothing.className}>Inspire</Text> Your Family</Heading>
 
 									<Text as={Link} href="#about" fontSize="xl" textAlign={["center", "center", "left"]} >Scroll Down <Down /></Text>
 									
@@ -47,7 +53,7 @@ export default function Home() {
 					<Grid borderRadius="5px" px="2" templateColumns="repeat(2, 1fr)" gap="10">
 						<GridItem colSpan={[2, 2, 2, 1]}>
 							<Heading mt="5" as="h2" fontWeight="bold" fontSize="3xl" textTransform="uppercase">Hazelwood Outdoors</Heading>
-							<Text mt="5" mb="5" fontSize="xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere ac diam eget sodales. Quisque rhoncus elit sed ligula accumsan, eu pellentesque mi viverra. Integer et erat efficitur, dictum diam eu, mollis nunc. Suspendisse gravida commodo tellus, sit amet faucibus nisl tempus id</Text>
+							<Text mt="5" mb="5" fontSize="md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere ac diam eget sodales. Quisque rhoncus elit sed ligula accumsan, eu pellentesque mi viverra. Integer et erat efficitur, dictum diam eu, mollis nunc. Suspendisse gravida commodo tellus, sit amet faucibus nisl tempus id</Text>
 						
 							<Text fontSize="lg" color="#555" mt="10" fontWeight="bold">Speak with a landscape expert</Text>
 
@@ -200,22 +206,449 @@ export default function Home() {
 				</Box>
 
 
-				<Box my="44">
-					<Text fontSize="5xl" textAlign="center" fontWeight="semibold">Already Have A Design?</Text>
+				<Box my="32">
+					<Box px="10" py="20" bg="linear-gradient(90deg, #e9efe5 0%, #fffbf9 35%)" maxW="4xl" mx="auto" borderRadius="md" shadow="2xl">
+						<Text fontSize="6xl" textAlign="center" className={playfair.className}>Already Have A Design?</Text>
 
-					<Text fontSize="lg" textAlign="center" my="10">We also offer a build-only service as well. <br /> Click the button below to learn more.</Text>
+						<Text fontSize="lg" textAlign="center" my="10" fontWeight="semibold">We also offer a build-only service as well. <br /> Click the button below to learn more.</Text>
 
-					<Center>
-						<Button borderRadius="0" w="fit-content" variant="solid" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }} color="whitesmoke" size="2xl">Build-Only Serivce</Button>
-					</Center>
-
+						<Center>
+							<Button borderRadius="0" w="fit-content" variant="solid" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }} color="whitesmoke" size="2xl">Build-Only Serivce</Button>
+						</Center>
+					</Box>
 				</Box>
 
-				<Container>
-					<Box w="full" py="10" px="5">
-						
+				<Container maxW="7xl">
+					<Box color="whitesmoke" position="relative" w="full" borderRadius="5px" bgImage="url('https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+						<Box py="20" px="14" borderRadius="5px" shadow="2xl" bgColor="rgba(0,0,0,0.55)">
+							<Stack direction="row" gap="5" alignItems="center" mb="6">
+								<Text fontSize="xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">All Phases Of Landscaping</Text>
+								<Separator borderColor="#8cc342" maxW="24" />
+							</Stack>
+
+							<Grid templateColumns="repeat(12, 1fr)" gap="10">
+								<GridItem colSpan="7">
+									<Text fontWeight="bold" fontSize="4xl">We draw inspiration from nature</Text>
+
+									<Text fontSize="md" mt="5">Well done landscape design can add a considerable amount of value to your property, not to mention, increase the aesthetic appeal, and provide a great first impression on guests or potential customers.</Text>
+								
+									<Text fontSize="md" mt="7">Our landscape designers can completely transform the look and feel of your home. By adding lush flowers, magnificent trees, and innovative, customized designs, we can create your dream front or backyard oasis.</Text>
+								
+									<Text fontSize="md" mt="7">We offer a wide variety of landscaping services including (but not limited to):</Text>
+
+									<Grid templateColumns="repeat(2, 1fr)" mt="10">
+										<GridItem >
+											<Stack direction="row" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+
+											<Stack direction="row" mt="3" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+
+											<Stack direction="row" mt="3" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+
+											<Stack direction="row" mt="3" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+										</GridItem>
+
+										<GridItem >
+											<Stack direction="row" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+
+											<Stack direction="row" mt="3" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+
+											<Stack direction="row" mt="3" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+
+											<Stack direction="row" mt="3" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+
+											<Stack direction="row" mt="3" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+
+											<Stack direction="row" mt="3" alignItems="center">
+												<Check fontSize="lg" />
+												<Text>Test Text</Text>
+											</Stack>
+										</GridItem>
+									</Grid>
+								</GridItem>
+
+								<GridItem colSpan="5" alignContent="end">
+									<Box h="18em" w="full" padding="5" bgColor="white" borderRadius="5px">
+										<Text fontSize="3xl" color="black" fontWeight="extrabold">Get a quote</Text>
+
+										<Textarea w="full" placeholder="Message" mt="3" />
+
+										<Stack direction="row" gap="3" mt="3">
+											<Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="First Name" />
+											<Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="Last Name" />
+										</Stack>
+										<Stack direction="row" gap="3" mt="3">
+											<Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="Phone" />
+											<Input type="email" variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="Email" />
+										</Stack>
+
+										<Center mt="1.2em">
+											<Button minW="20em" size="xl" color="white" bgColor="rgba(140,195,66,1)" _hover={{ transform: 'scale(1.02)' }}>Send Message</Button>
+										</Center>
+									</Box>
+								</GridItem>
+							</Grid>
+						</Box>
 					</Box>
 				</Container>
+
+				<Container maxW="6xl" mt="20">
+					<Center>
+						<Stack direction="row" gap="5" alignItems="center" mb="6">
+							<Text fontSize="xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Portfolio</Text>
+							<Separator borderColor="#8cc342" minW="24" maxW="24" />
+						</Stack>
+					</Center>
+
+					<Text fontSize="4xl" fontWeight="bold" textAlign="center">Recent <Text as="span" className={nothing.className} color="#8cc342">Projects</Text></Text>
+
+					<Grid templateColumns="repeat(12, 1fr)" gap="4" mt="10">
+						<GridItem colSpan="5">
+							<Image h="250px" src="https://placehold.co/650x250" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image h="250px" src="https://placehold.co/400x250" />
+						</GridItem>
+						<GridItem colSpan="4">
+							<Image h="250px" src="https://placehold.co/550x250" />
+						</GridItem>
+
+						<GridItem colSpan="6">
+							<Image h="250px" src="https://placehold.co/650x250" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image h="250px" src="https://placehold.co/400x250" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image h="250px" src="https://placehold.co/550x250" />
+						</GridItem>
+					</Grid>
+				</Container>
+
+				<Container maxW="8xl" mt="20">
+					<Center>
+						<Stack direction="row" gap="5" alignItems="center" mb="6">
+							<Text fontSize="xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Instagram</Text>
+							<Separator borderColor="#8cc342" minW="24" maxW="24" />
+						</Stack>
+					</Center>
+
+					<Text fontSize="4xl" fontWeight="bold" textAlign="center">Follow Us On <Text as="span" className={nothing.className} color="#8cc342">Instagram</Text></Text>
+				
+					<Grid templateColumns="repeat(12, 1fr)" mt="10" gap="4">
+						<GridItem colSpan="3">
+							<Image src="https://placehold.co/550" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image src="https://placehold.co/550" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image src="https://placehold.co/550" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image src="https://placehold.co/550" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image src="https://placehold.co/550" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image src="https://placehold.co/550" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image src="https://placehold.co/550" />
+						</GridItem>
+						<GridItem colSpan="3">
+							<Image src="https://placehold.co/550" />
+						</GridItem>
+					</Grid>
+
+					<Center>
+						<Button variant="solid" size="sm" mt="5" bgColor="#4c68d7"><Insta /> Follow Us On Instagram</Button>
+					</Center>
+				</Container>
+
+				<Box mb="60" h="45em" mt="20" w="full" bgPos="center" bgImage="url('https://images.unsplash.com/photo-1734079692147-c6fc9438a2d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dx')">
+					<Box h="45em" py="20" px="14" borderRadius="5px" shadow="2xl" bgColor="rgba(0,0,0,0.45)">
+						<Box ml="20em" mt="15em" maxW="md">
+							<Stack direction="row" gap="5" alignItems="center" mb="6">
+								<Text fontSize="xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Our Process</Text>
+								<Separator borderColor="#8cc342" minW="24" maxW="24" />
+							</Stack>
+
+							<Text fontSize="4xl" fontWeight="bold" color="whitesmoke">5 Easy <Text as="span" fontSize="5xl" className={nothing.className} color="#8cc342">Steps</Text></Text>
+
+							<Box h="24em" w="full" mt="4" bgColor="white" borderRadius="5px" px="10" py="5" shadow="lg">
+								<Stack direction="row" alignItems="center" gap="4">
+									<Text fontSize="5xl" fontWeight="bold" color="#8cc342">1</Text>
+									<Text fontWeight="bold" fontSize="lg" lineHeight="1.1">Tell us <br /> your vision</Text>
+								</Stack>
+
+								<Textarea mt="4"  placeholder="Hey, I need a quote for..." />
+
+								<Input type="text" placeholder="Your Name" mt="4" />
+
+								<Input type="text" placeholder="Email" mt="4" />
+
+								<Input type="text" placeholder="Phone" mt="4" />
+
+								<Center mt="1em">
+									<Button minW="20em" size="xl" color="white" bgColor="rgba(140,195,66,1)" _hover={{ transform: 'scale(1.02)' }}>Send Message</Button>
+								</Center>
+							</Box>
+						</Box>
+					</Box>
+				</Box>
+
+				<AnimatedSteps />
+
+				<Container maxW="5xl" shadow="2xl" py="10" mt="20" px="10">
+					<Text fontSize="3xl" textAlign="center">"An example of a client testimonial. <Text as="span" fontWeight="bold">Really shows how well this company works!</Text>"</Text>
+
+					<Stack direction="row" gap="10" alignItems="center" fontSize="sm" w="fit-content" mx="auto" mt="10">
+						<Text>- John Doe</Text>
+						<Text color="blackAlpha.500">Happy Customer</Text>
+					</Stack>
+				</Container>
+
+				<Container maxW="5xl" mt="20" zIndex="999">
+					<Box w="full">
+						<Image w="full" objectFit="cover" src="https://placehold.co/700x650" />
+						<Box bgColor="#F3F2EF">
+							<SimpleGrid columns="2">
+								<Box p="14">
+									<Box bgColor="white" p="4">
+										<Text fontSize="lg" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Project Recap</Text>
+										<SimpleGrid columns="2" mt="5" gap="5">
+											<Stack direction="row" alignItems="center" gap="4">
+												<Price fontSize="2xl" color="#8cc342" />
+
+												<Box>
+													<Text fontWeight="bold" fontSize="sm" textTransform="uppercase">Aprx. Cost</Text>
+													<Text fontSize="xs">$40-60K</Text>
+												</Box>
+											</Stack>
+
+											<Stack direction="row" alignItems="center" gap="4">
+												<Size fontSize="3xl" color="#8cc342" />
+
+												<Box>
+													<Text fontWeight="bold" fontSize="sm" textTransform="uppercase">Size</Text>
+													<Text fontSize="xs">Small</Text>
+												</Box>
+											</Stack>
+
+											<Stack direction="row" alignItems="center" gap="4">
+												<Options fontSize="3xl" color="#8cc342" />
+
+												<Box>
+													<Text fontWeight="bold" fontSize="sm" textTransform="uppercase">Options</Text>
+													<Text fontSize="xs">Premium <br /> Landscape</Text>
+												</Box>
+											</Stack>
+
+											<Stack direction="row" alignItems="center" gap="4">
+												<Layout fontSize="3xl" color="#8cc342" />
+
+												<Box>
+													<Text fontWeight="bold" fontSize="sm" textTransform="uppercase">Layout</Text>
+													<Text fontSize="xs">Custom</Text>
+												</Box>
+											</Stack>
+										</SimpleGrid>
+									</Box>
+								</Box>
+								<Box py="14" pr="10">
+									<Text fontSize="sm">“We really wanted to build an outdoor space that set our clients up for doing what they love to do most with their family; entertaining and unwinding in the backyard together.</Text>
+								
+									<Text fontSize="sm" mt="5"><Text as="span" fontWeight="bold">One of the signature spaces is the stone fireplace, where they enjoy the relaxing ambience at night.</Text> We love how much our clients really show up in all the details.”</Text>
+
+									<Stack direction="row" alignItems="center" gap="4" mt="10">
+										<Avatar name="Michael Hazelwood" size="lg" />
+										<Box>
+											<Text fontWeight="semibold">Michael Hazelwood</Text>
+											<Text fontSize="sm">Hazelwood Outdoors</Text>
+										</Box>
+									</Stack>
+								</Box>
+							</SimpleGrid>
+						</Box>
+					</Box>
+				</Container>
+
+				<Box h={["37em", "45em",  "70em"]} mt="-12em" zIndex="-99">
+					<Box h={["35em", "70em"]} w="full" position="relative" bgImage="url('https://images.unsplash.com/photo-1601654253194-260e0b6984f9?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" bgSize="cover" bgPos="center">
+						<Box h="full" w="full" px="5" py="5" position="absolute" top="0" left="0" right="0" background="linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.95))">
+							<Box position="relative" w="full" borderWidth="2px" borderColor="#8cc342" h="full" pt="56">
+								<Flex px="2" direction="column" w="full" h="full" mt="20" alignItems="center" color="whitesmoke	">
+									<Stack direction="row" gap="5" alignItems="center" mb="6">
+										<Text fontSize="xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Hardscaping</Text>
+										<Separator borderColor="#8cc342" minW="24" maxW="24" />
+									</Stack>
+
+									<Text fontSize="3xl" fontWeight="bold" textAlign="center">Your Yard Has More To Offer</Text>
+
+									<Text fontSize="sm" maxW="xl" textAlign="center" mt="5">Hazelwood Outdoors utilizes innovative methods and develops a design that turns your dreams into reality.</Text>
+									
+									<Text fontSize="sm" textAlign="center" mt="5">From custom patios and walkways, to walls and custom structures, we have your back! Some of our specialties include:</Text>
+								
+									<SimpleGrid columns="3" gap="10" mt="10">
+										<Box bgImage="url('https://placehold.co/350x200')" p="3" w="350px" h="200px">
+											<Text fontSize="2xl" fontWeight="bold">Patios</Text>
+										</Box>
+										<Box bgImage="url('https://placehold.co/350x200')" p="3" w="350px" h="200px">
+											<Text fontSize="2xl" fontWeight="bold">Wall Steps</Text>
+										</Box>
+										<Box bgImage="url('https://placehold.co/350x200')" p="3" w="350px" h="200px">
+											<Text fontSize="2xl" fontWeight="bold">Pool Design & Decking</Text>
+										</Box>
+										<Box bgImage="url('https://placehold.co/350x200')" p="3" w="350px" h="200px">
+											<Text fontSize="2xl" fontWeight="bold">Walkways</Text>
+										</Box>
+										<Box bgImage="url('https://placehold.co/350x200')" p="3" w="350px" h="200px">
+											<Text fontSize="2xl" fontWeight="bold">Fireplaces or Fire Pits</Text>
+										</Box>
+										<Box bgImage="url('https://placehold.co/350x200')" p="3" w="350px" h="200px">
+											<Text fontSize="2xl" fontWeight="bold">Outdoor Kitchens & Bars</Text>
+										</Box>
+									</SimpleGrid>
+								</Flex>
+							</Box>
+						</Box>
+					</Box>
+				</Box>
+				<Box py="20" bgColor="#29282d">
+					<SimpleGrid columns="2" maxW="5xl" mx="auto">
+						<Box color="whitesmoke">
+							<Text fontSize="4xl" fontWeight="bold" className={playfair.className}>Schedule a Free <br /> Consultation Call</Text>
+
+							<Text fontSize="sm" fontWeight="bold" textTransform="uppercase" mt="10">What This Is</Text>
+
+							<Text fontSize="3xl" color="#8cc342" fontWeight="bold" mt="2">15 min. call</Text>
+
+							<Text fontSize="sm" fontWeight="bold" textTransform="uppercase" mt="10">What We'll Cover</Text>
+							
+							<Box as="ul" listStyleType="circle" ml="10" mt="2">
+								<li>Tell us your ideas</li>
+								<li>Cost estimate</li>
+								<li>Project timeframe</li>
+							</Box>
+
+							<Button variant="solid" size="xl" fontWeight="bold" fontSize="xl" mt="10" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }}>Get A Free Estimate</Button>
+						</Box>
+						<Box w="full" p="5" bgColor="whitesmoke" borderRadius="5px" shadow="2xl">
+							<Text fontSize="lg">Schedule UI</Text>
+						</Box>
+					</SimpleGrid>
+				</Box>
+				<Box h={["37em", "45em",  "50em"]}zIndex="-99">
+					<Box h={["35em", "50em"]} w="full" position="relative" bgImage="url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" bgSize="cover" bgPos="center">
+						<Box h="full" w="full" px="5" py="5" position="absolute" top="0" left="0" right="0" background="linear-gradient(to bottom right, rgba(0,0,0,0.2), rgba(0,0,0,0.9))">
+							<Box position="relative" w="full" borderWidth="2px" borderColor="#8cc342" h="full">
+								<Flex px="2" direction="column" w="full" h="full" justifyContent="center" alignItems="center">
+									<Box w="3xl" bgColor="white" borderRadius="5px" px="14" py="14" shadow="2xl">
+										<Text fontSize="4xl" className={playfair.className}>Stunning <Text as="span" color="#8cc342">Landscape Design</Text> Increases Curb Appeal & Home Value</Text>
+									
+										<Text mt="10" color="blackAlpha.800" fontWeight="medium">National Association of Realtor data shows that quality landscape designs increase curb appeal as well as home value. This means your home gets more attention and can sell much quicker – plus, demands a higher sales price!</Text>
+
+										<Grid  templateColumns="repeat(12, 1fr)" gap="10" mt="10">
+											<GridItem colSpan="2" alignContent="center">
+												<UpwardTrend color="#8cc342" fontSize="5xl" />
+											</GridItem>
+
+											<GridItem colSpan="10">
+												<Text fontSize="2xl" fontWeight="bold">Add value to your home</Text>
+
+												<Text fontSize="sm" mt="2">Landscape design typically adds 8-12% to home value according to National Association of Realtor data.</Text>
+											</GridItem>
+										</Grid>
+										<Grid templateColumns="repeat(12, 1fr)" gap="10" mt="10">
+											<GridItem colSpan="2" alignContent="center">
+												<Stack direction="row" color="#8cc342" alignItems="center" gap="-2">
+													<Text fontSize="6xl">0</Text>
+													<Box>
+														<Text mt="-1" fontSize="4xl">%</Text>
+														<Text mt="-3.5">APR</Text>
+													</Box>
+												</Stack>
+											</GridItem>
+
+											<GridItem colSpan="10">
+												<Box>
+													<Text fontSize="2xl" fontWeight="bold">Low, affordable payments</Text>
+
+													<Text fontSize="sm" mt="2">Reduce your out of pocket cost with financing. Our bank is ready to get you approved quickly.</Text>
+												</Box>
+											</GridItem>
+										</Grid>
+									</Box>
+								</Flex>
+							</Box>
+						</Box>
+					</Box>
+				</Box>
+
+				<Box py="20" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 35%)">
+					<Text alignItems="center" fontSize="6xl" textAlign="center" fontWeight="bold">Hazelwood Outdoors <Text as="span" color="#8cc342" fontSize="3xl" fontStyle="italic" fontWeight="normal">mission & values</Text></Text>
+				
+					<SimpleGrid columns="2" mt="16" maxW="8xl" mx="auto">
+						<Box>
+							<Stack spacing={4} align="center">
+								<Box w="450px" h="300px" overflow="hidden" borderRadius="md" boxShadow="md">
+									<Image
+									src="https://images.unsplash.com/photo-1711112155287-527d5aa273ad?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+									alt="Hydrangeas"
+									objectFit="cover"
+									/>
+								</Box>
+								<Box
+									overflow="hidden"
+									borderRadius="md"
+									boxShadow="md"
+									mt="-10em"
+									ml="15em"
+								>
+									<Image
+									w="450px" h="300px"
+									src="https://images.unsplash.com/photo-1605684437254-344f03b1e65c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+									alt="Fountain"
+									objectFit="cover"
+									/>
+								</Box>
+							</Stack>
+						</Box>
+						<Box alignContent="center" px="10">
+							<Text>We are <strong>Hazelwood Outdoors</strong>, we specialize in landscape construction and transforming outdoor spaces and we are growing by the day.</Text>
+							<Text mt="5">Our mission is to exceed our clients’ expectations and to raise the bar for the industry while ensuring quality craftsmanship and professionalism.</Text>
+							<Text mt="5">We are Disciplined and Results Oriented. Our core values are the backbone of our business: we are Inspirational, Aligned, Transparent, and Accountable.</Text>
+						</Box>
+					</SimpleGrid>
+				</Box>
 			</Box>
 		</>
 	);

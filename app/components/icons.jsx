@@ -3,6 +3,11 @@ import { GoLinkExternal } from "react-icons/go";
 import { AiOutlineMenu, AiOutlineCheck, AiOutlineDown } from "react-icons/ai";
 import { BiSolidConversation } from "react-icons/bi";
 import { MdDesignServices, MdConstruction } from "react-icons/md";
+import { CiInstagram } from "react-icons/ci";
+import { PiResize } from "react-icons/pi";
+import { RiRuler2Line, RiPriceTag3Line  } from "react-icons/ri";
+import { CgOptions } from "react-icons/cg";
+import { BsGraphUp } from "react-icons/bs";
 
 export const External = (props) => {
     return <Icon {...props}>
@@ -43,5 +48,41 @@ export const Design = (props) => {
 export const Build = (props) => {
     return <Icon {...props}>
         <MdConstruction />
+    </Icon>
+}
+
+export const Insta = (props) => {
+    return <Icon {...props}>
+        <CiInstagram />
+    </Icon>
+}
+
+export const Size = (props) => {
+    return <Icon {...props}>
+        <PiResize />
+    </Icon>
+}
+
+export const Layout = (props) => {
+    return <Icon {...props}>
+        <RiRuler2Line />
+    </Icon>
+}
+
+export const Price = (props) => {
+    return <Icon {...props}>
+        <RiPriceTag3Line />
+    </Icon>
+}
+
+export const Options = (props) => {
+    return <Icon {...props}>
+        <CgOptions />
+    </Icon>
+}
+
+export const UpwardTrend = (props) => {
+    return <Icon {...props}>
+        <BsGraphUp />
     </Icon>
 }
