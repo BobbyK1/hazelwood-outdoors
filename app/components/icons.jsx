@@ -2,13 +2,14 @@ import { Icon } from "@chakra-ui/react"
 import { GoLinkExternal } from "react-icons/go";
 import { AiOutlineMenu, AiOutlineCheck, AiOutlineDown } from "react-icons/ai";
 import { BiSolidConversation } from "react-icons/bi";
-import { MdDesignServices, MdConstruction } from "react-icons/md";
-import { CiInstagram } from "react-icons/ci";
+import { MdDesignServices, MdConstruction, MdOutlinePhoneInTalk, MdOutlineMail   } from "react-icons/md";
+import { CiInstagram, CiBookmark } from "react-icons/ci";
 import { PiResize } from "react-icons/pi";
-import { RiRuler2Line, RiPriceTag3Line  } from "react-icons/ri";
+import { RiRuler2Line, RiPriceTag3Line, RiCalendarScheduleLine } from "react-icons/ri";
 import { CgOptions } from "react-icons/cg";
 import { BsGraphUp } from "react-icons/bs";
 import { FaStar, FaGoogle, FaYelp, FaFacebookF } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 export const External = (props) => {
     return <Icon {...props}>
@@ -109,5 +110,35 @@ export const Yelp = (props) => {
 export const Facebook = (props) => {
     return <Icon {...props}>
         <FaFacebookF />
+    </Icon>
+}
+
+export const GoogleFullColor = (props) => {
+    return <Icon {...props}>
+        <FcGoogle />
+    </Icon>
+}
+
+export const Phone = (props) => {
+    return <Icon {...props}>
+        <MdOutlinePhoneInTalk />
+    </Icon>
+}
+
+export const Email = (props) => {
+    return <Icon {...props}>
+        <MdOutlineMail  />
+    </Icon>
+}
+
+export const Schedule = (props) => {
+    return <Icon {...props}>
+        <RiCalendarScheduleLine  />
+    </Icon>
+}
+
+export const Book = (props) => {
+    return <Icon {...props}>
+        <CiBookmark   />
     </Icon>
 }

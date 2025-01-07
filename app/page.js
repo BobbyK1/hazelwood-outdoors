@@ -1,5 +1,5 @@
 import { Box, Center, Circle, Container, Flex, Grid, GridItem, Heading, Image, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
-import { Build, Check, Conversation, Design, Down, Facebook, Google, Insta, Layout, Options, Price, Size, UpwardTrend, Yelp } from "./components/icons";
+import { Build, Check, Conversation, Design, Down, External, Facebook, Google, GoogleFullColor, Insta, Layout, Options, Price, Size, UpwardTrend, Yelp } from "./components/icons";
 import { Button } from "./components/ui/button";
 import Link from "next/link";
 import { Nothing_You_Could_Do, Playfair_Display } from 'next/font/google'
@@ -213,7 +213,7 @@ export default function Home() {
 					<Text fontSize="lg" textAlign="center" my="10" fontWeight="semibold">We also offer a build-only service as well. <br /> Click the button below to learn more.</Text>
 
 					<Center>
-						<Button borderRadius="0" w="fit-content" variant="solid" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }} color="whitesmoke" size="2xl">Build-Only Serivce</Button>
+						<Button w="fit-content" variant="solid" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }} color="whitesmoke" size="2xl">Build-Only Serivce</Button>
 					</Center>
 				</Box>
 
@@ -540,7 +540,7 @@ export default function Home() {
 						</Box>
 					</Box>
 				</Box>
-				<Box py="44" px="10" bgColor="#29282d">
+				<Box id="schedule" py="44" px="10" bgColor="#29282d">
 					<SimpleGrid columns={[1, 1, 1, 2]} maxW="5xl" mx="auto" gap="10">
 						<Box color="whitesmoke">
 							<Text fontSize="4xl" fontWeight="bold" className={playfair.className}>Schedule a Free <br /> Consultation Call</Text>
@@ -612,7 +612,7 @@ export default function Home() {
 				</Box>
 
 				<Box py="20" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 75%, #fff 100%)">
-					<Text alignItems="center" fontSize={["2xl", "", "", "6xl"]} textAlign="center" fontWeight="bold">Hazelwood Outdoors <Text as="span" color="#8cc342" fontSize="xl" fontStyle="italic" fontWeight="normal">mission & values</Text></Text>
+					<Text alignItems="center" fontSize={["2xl", "", "", "6xl"]} textAlign="center" fontWeight="bold">Hazelwood Outdoors <Text as="span" color="#8cc342" fontSize={["xl", "", "", "4xl"]} fontStyle="italic" fontWeight="normal">mission & values</Text></Text>
 				
 					<SimpleGrid columns={[1, 1, 1, 2]} mt="16" maxW="8xl" mx="auto" gap="10">
 						<Box>
@@ -695,7 +695,7 @@ export default function Home() {
 					
 						<Text fontSize="md" textAlign="center" mt="5">Read what our happy customers are saying about their experience of working with us.</Text>
 
-						<SimpleGrid columns="3" mt="20">
+						<SimpleGrid columns={[1, 1, 3]} mt="20" gap="10">
 							<Stack direction="column" alignItems="center">
 								<StarGroup fontSize="4xl" color="#F8D7A7" />
 								<Stack direction="row" alignItems="center" gap="2" mt="4">
@@ -723,6 +723,72 @@ export default function Home() {
 								<Text color="#e8414b" textTransform="uppercase" textAlign="center">4.3 Stars</Text>
 							</Stack>
 						</SimpleGrid>
+
+						<SimpleGrid columns={[1, 1, 2]} gap="10" mt="10">
+							<Box shadow="2xl" py="5" px="10" borderRadius="lg">
+								<Text fontSize="lg" fontWeight="bold">"Lorem ipsum dolor sit amet..."</Text>
+
+								<Text my="10">consectetur adipiscing elit. Donec et massa non metus gravida sagittis. Phasellus nunc sapien, hendrerit finibus tincidunt sit amet, varius in orci. Maecenas a nibh fringilla, condimentum neque sed, laoreet mauris.</Text>
+							
+								<Stack direction="row" alignItems="center" justify="space-between">
+									<Box>
+										<Text fontWeight="bold">- John Doe</Text>
+										<Text color="blackAlpha.800">City Name, State</Text>
+									</Box>
+
+									<Text fontWeight="bold"><Text as={Link} href="/" _target="blank" color="blackAlpha.700" transition="0.2s ease" _hover={{ color: "blackAlpha.900" }} textDecor="underline">Read Reviews</Text> on <GoogleFullColor fontSize="2xl" /></Text>
+								</Stack>
+							</Box>
+
+							<Box shadow="2xl" py="5" px="10" borderRadius="lg">
+								<Text fontSize="lg" fontWeight="bold">"Lorem ipsum dolor sit amet..."</Text>
+
+								<Text my="10">consectetur adipiscing elit. Donec et massa non metus gravida sagittis. Phasellus nunc sapien, hendrerit finibus tincidunt sit amet, varius in orci. Maecenas a nibh fringilla, condimentum neque sed, laoreet mauris.</Text>
+							
+								<Stack direction="row" alignItems="center" justify="space-between">
+									<Box>
+										<Text fontWeight="bold">- John Doe</Text>
+										<Text color="blackAlpha.800">City Name, State</Text>
+									</Box>
+
+									<Text fontWeight="bold"><Text as={Link} href="/" _target="blank" color="blackAlpha.700" transition="0.2s ease" _hover={{ color: "blackAlpha.900" }} textDecor="underline">Read Reviews</Text> on <GoogleFullColor fontSize="2xl" /></Text>
+								</Stack>
+							</Box>
+
+							<Box shadow="2xl" py="5" px="10" borderRadius="lg">
+								<Text fontSize="lg" fontWeight="bold">"Lorem ipsum dolor sit amet..."</Text>
+
+								<Text my="10">consectetur adipiscing elit. Donec et massa non metus gravida sagittis. Phasellus nunc sapien, hendrerit finibus tincidunt sit amet, varius in orci. Maecenas a nibh fringilla, condimentum neque sed, laoreet mauris.</Text>
+							
+								<Stack direction="row" alignItems="center" justify="space-between">
+									<Box>
+										<Text fontWeight="bold">- John Doe</Text>
+										<Text color="blackAlpha.800">City Name, State</Text>
+									</Box>
+
+									<Text fontWeight="bold"><Text as={Link} href="/" _target="blank" color="blackAlpha.700" transition="0.2s ease" _hover={{ color: "blackAlpha.900" }} textDecor="underline">Read Reviews</Text> on <GoogleFullColor fontSize="2xl" /></Text>
+								</Stack>
+							</Box>
+
+							<Box shadow="2xl" py="5" px="10" borderRadius="lg">
+								<Text fontSize="lg" fontWeight="bold">"Lorem ipsum dolor sit amet..."</Text>
+
+								<Text my="10">consectetur adipiscing elit. Donec et massa non metus gravida sagittis. Phasellus nunc sapien, hendrerit finibus tincidunt sit amet, varius in orci. Maecenas a nibh fringilla, condimentum neque sed, laoreet mauris.</Text>
+							
+								<Stack direction="row" alignItems="center" justify="space-between">
+									<Box>
+										<Text fontWeight="bold">- John Doe</Text>
+										<Text color="blackAlpha.800">City Name, State</Text>
+									</Box>
+
+									<Text fontWeight="bold"><Text as={Link} href="/" _target="blank" color="blackAlpha.700" transition="0.2s ease" _hover={{ color: "blackAlpha.900" }} textDecor="underline">Read Reviews</Text> on <GoogleFullColor fontSize="2xl" /></Text>
+								</Stack>
+							</Box>
+						</SimpleGrid>
+
+						<Center mt="10">
+							<Button w="fit-content" variant="solid" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }} color="whitesmoke" size="2xl" mt="10">Leave A Review <External /></Button>
+						</Center>
 					</Container>
 				</Box>
 			</Box>

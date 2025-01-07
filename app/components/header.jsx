@@ -33,15 +33,15 @@ export default function Header() {
                     </GridItem>
 
                     <GridItem colSpan="3" display={["none", "none", "none", "flex"]} alignItems="center">
-                        <Text fontSize="lg" color="#8cc342" textDecoration="underline" borderRadius="0px">Get A Free Quote</Text>
+                        <Text as={Link} href="#schedule" fontSize="lg" color="#8cc342" textDecoration="underline" borderRadius="0px">Get A Free Quote</Text>
                     </GridItem>
 
                     <GridItem colSpan="3" display={["none", "none", "none", "flex"]} alignItems="center">
-                        <Text as={Link} href="/" fontWeight="bold">(219) 779-5752</Text>
+                        <Text as={Link} href="/" fontWeight="bold">(219) 555-5555</Text>
                     </GridItem>
 
                     <GridItem colSpan="3" display={["none", "none", "none", "flex"]} alignItems="center">
-                        <Button variant="solid" borderRadius="0px" as={Link} href="/" size="lg" bgColor="#8cc342">Log In</Button>
+                        <Button variant="solid" as={Link} href="/" size="lg" bgColor="#8cc342">Log In</Button>
                     </GridItem>
 
                     <GridItem colSpan={[4, 4, 7]} p="0" display={["flex", "flex", "flex", "none"]} justifyContent="end" alignItems="center">
@@ -55,10 +55,6 @@ export default function Header() {
                                 </DrawerTrigger>
                                 <DrawerContent>
                                     <DrawerBody>
-                                        <Box w="full" px="2" py="5" _hover={{ bgColor: "blackAlpha.100" }} transition="0.2s ease">
-                                            <Text fontSize="lg" as={Link} href="/">Why Us</Text>
-                                        </Box>
-                                        <Separator />
                                         <AccordionRoot collapsible>
                                             <AccordionItem value="1">
                                                 <AccordionItemTrigger py="4" px="2" fontSize="lg" fontWeight="normal">Services</AccordionItemTrigger>
@@ -75,21 +71,20 @@ export default function Header() {
                                                 </AccordionItemContent>
                                             </AccordionItem>
                                         </AccordionRoot>
-                                        
+
                                         <Separator />
-                                        <Box w="full" px="2" py="5" _hover={{ bgColor: "blackAlpha.100" }} transition="0.2s ease">
-                                            <Text fontSize="lg" as={Link} href="/">Service Area</Text>
-                                        </Box>
-                                        <Separator />
+
                                         <Box w="full" px="2" py="5" _hover={{ bgColor: "blackAlpha.100" }} transition="0.2s ease">
                                             <Text fontSize="lg" as={Link} href="/">Careers</Text>
                                         </Box>
+
                                         <Separator />
+
                                         <Box w="full" px="2" py="5" _hover={{ bgColor: "blackAlpha.100" }} transition="0.2s ease">
-                                            <Text fontSize="lg" as={Link} href="/">Test With More Text</Text>
+                                            <Text fontSize="lg" as={Link} href="/">Contact Us</Text>
                                         </Box>
 
-                                        <Button mt="5" w="full" variant="solid" size="md" fontSize="lg" bgColor="#8cc342" borderRadius="0px">Get A Free Quote</Button>
+                                        <Button mt="5" w="full" variant="solid" size="md" fontSize="lg" bgColor="#8cc342" borderRadius="0px">Log In</Button>
 
                                     </DrawerBody>
                                 </DrawerContent>

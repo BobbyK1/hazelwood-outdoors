@@ -1,47 +1,75 @@
-import { Box, Container, Grid, GridItem, Separator, Text } from "@chakra-ui/react";
+import { Box, Center, Container, Flex, Grid, GridItem, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { Book, Email, Phone, Schedule, UpwardTrend } from "./icons";
+import { Playfair_Display } from 'next/font/google'
+import { Button } from "./ui/button";
+
+const playfair = Playfair_Display({
+    subsets: ['latin'],
+    weight: ['400'],
+    display: "swap",
+})
 
 
 export default function Footer() {
 
     return (
         <>
-            <Box w="full" mt="10" py="14" bgColor="blackAlpha.50">
-                <Container>
-                    <Grid gap="5" templateColumns="repeat(12, 1fr)">
-                        <GridItem colSpan={[12, 12, 12, 3]}>
-                            <Image src="/logo-transparent.png" width="150" height="75" />
-                        </GridItem>
-                        <GridItem colSpan={[12, 12, 12, 3]}>
-                            <Text fontSize="lg" fontWeight="semibold">Pages</Text>
+            <Box h="fit-content" zIndex="-99">
+                <Box h="fit-content" w="full" bgImage="url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" bgSize="cover" bgPos="center">
+                    <Box h="full" w="full" px="5" py="5" background="linear-gradient(to bottom right, rgba(0,0,0,0.9), rgba(0,0,0,0.5))">
+                        <Box w="full" borderWidth="2px" borderColor="#8cc342" h="fit-content">
+                            <Flex px="2" direction="column" h="full" justifyContent="center" alignItems="center">
+                                <Container maxW="7xl" pb="7" pt="32">
+                                    <SimpleGrid columns={[1, 1, 2]} gap="10">
+                                        <Box color="whitesmoke">
+                                            <Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Hazelwood Outdoors</Text>
+                                            <Text fontSize="6xl" className={playfair.className} my="7">Our <Text as="span" color="#8cc342">Promise</Text></Text>
 
-                            <Separator my="4" />
+                                            <Text fontSize="lg">Hazelwood Outdoors will help your family plan, design, & install the project of your dreams. We are professionals at staying on budget, and completing projects on time.</Text>
+                                        
+                                            <Text fontSize="2xl" mt="5" className={playfair.className}>Michael Hazelwood</Text>
+                                            <Text fontSize="lg" fontWeight="medium" mb="14">Owner</Text>
 
-                            <Text mb="3"><Link href="/">Why Us</Link></Text>
-                            <Text mb="3"><Link href="/">Service Area</Link></Text>
-                            <Text mb="3"><Link href="/">Careers</Link></Text>
-                            <Text mb="3"><Link href="/">Test With More Text</Link></Text>
-                        </GridItem>
-                        <GridItem colSpan={[12, 12, 12, 3]}>
-                            <Text fontSize="lg" fontWeight="semibold">Service</Text>
+                                            <Text as={Link} href="/" fontSize="2xl" fontWeight="bold"><Phone fontSize="3xl" mr="2" color="#8cc342" /> (219) 555-5555</Text>
 
-                            <Separator my="4" />
+                                            <Box my="5" />
+                                            <Text as={Link} href="/" fontSize="xl"><Email fontSize="3xl" mr="2" color="#8cc342" /> contact@hazelwoodoutdoors.com</Text>
+                                        </Box>
+                                        <Box alignContent="end">
+                                            <Box h="fit-content" maxW="sm" mx="auto" padding="5" bgColor="white" borderRadius="5px">
+                                                <Text fontSize="3xl" color="black" fontWeight="extrabold">Get a quote</Text>
+        
+                                                <Textarea w="full" placeholder="Message" mt="3" />
+        
+                                                <Stack direction={["column", "column", "column", "row"]} gap="3" mt="3">
+                                                    <Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="First Name" />
+                                                    <Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="Last Name" />
+                                                </Stack>
+                                                <Stack mb="6" direction={["column", "column", "column", "row"]} gap="3" mt="3">
+                                                    <Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="Phone" />
+                                                    <Input type="email" variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="Email" />
+                                                </Stack>
+                                            </Box>
+                                            <Center mt="-1.3em">
+                                                <Button maxW="20em" minW="14em" size="xl" color="white" bgColor="rgba(140,195,66,1)" _hover={{ transform: 'scale(1.02)' }}>Send Message</Button>
+                                            </Center>
+                                        </Box>
+                                    </SimpleGrid>
 
-                            <Text mb="3"><Link href="/">Example 1</Link></Text>
-                            <Text mb="3"><Link href="/">Example 2</Link></Text>
-                            <Text mb="3"><Link href="/">Example 3</Link></Text>
-                        </GridItem>
-                        <GridItem colSpan={[12, 12, 12, 3]}>
-                            <Text fontSize="lg" fontWeight="semibold">Contact Us</Text>
-
-                            <Separator my="4" />
-
-                            <Text mb="3"><Link href="/">contact@hazelwoodoutdoors.com</Link></Text>
-                            <Text mb="3"><Link href="/">+1 (219) 555-5555</Link></Text>
-                        </GridItem>
-                    </Grid>
-                </Container>
+                                    <Stack direction={["column", "", "", "row"]} justify="space-between" alignItems={["start", "", "", "center"]} color="whitesmoke" mt="32" gap="5">
+                                        <Text as={Link} href="/" fontSize="lg"><Schedule fontSize="2xl" mr="2" color="#8cc342" /> Book a free call</Text>
+                                        <Text as={Link} href="/" fontSize="lg"><Book fontSize="2xl" mr="2" color="#8cc342" /> Book a site visit</Text>
+                                        <Box>
+                                            <Text fontSize="lg" textAlign={["left", "", "", "right"]}>Hazelwood Outdoors &copy; 2025</Text>
+                                        </Box>
+                                    </Stack>
+                                </Container>
+                            </Flex>
+                        </Box>
+                    </Box>
+                </Box>
             </Box>
         </>
     )
