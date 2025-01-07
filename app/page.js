@@ -22,18 +22,17 @@ const playfair = Playfair_Display({
 export default function Home() {
 	return (
 		<>
-			<Box h={["37em", "45em",  "55em"]}>
-				<Box h={["35em", "50em"]} w="full" position="relative" bgImage="url('/main-cover.jpg')" bgSize="cover" bgPos="center">
-					<Box h="full" w="full" px="5" py="5" position="absolute" top="0" left="0" right="0" background="linear-gradient(to bottom right, rgba(0,0,0,0.2), rgba(0,0,0,0.9))">
-						<Box position="relative" w="full" borderWidth="2px" borderColor="#8cc342" h="full" pt="56">
+				<Box h={["35em", "55em"]} w="full" bgImage="url('/main-cover.jpg')" bgSize="cover" bgPos="center">
+					<Box h="full" w="full" px="5" py="5" background="linear-gradient(to bottom right, rgba(0,0,0,0.2), rgba(0,0,0,0.9))">
+						<Box w="full" borderWidth="2px" borderColor="#8cc342" h="full" pt="56">
 							<Flex px="2" direction="row" w="full" h="full" justifyContent="center">
-								<Box maxW="3xl" color="whitesmoke">
+								<Box minW={["", "", "", "4xl", "5xl"]} color="whitesmoke">
 									<Stack display={["none", "none", "flex"]} direction="row" gap="5" alignItems="center" mb="6">
 										<Text fontSize="2xl" fontWeight="semibold" color="#8cc342">Landscape Pros</Text>
 										<Separator borderColor="#8cc342" maxW="52" />
 									</Stack>
 									
-									<Heading mb="10" as="h1" fontSize={["4xl", "4xl", "6xl"]} textAlign={["center", "center", "left"]} lineHeight="1.5">Stunning Landscapes <br /> To <Text fontWeight="bold" as="span" color="#8cc342" className={nothing.className}>Inspire</Text> Your Family</Heading>
+									<Heading mb="10" as="h1" fontSize={["4xl", "4xl", "6xl"]} className={playfair.className} textAlign={["center", "center", "left"]} lineHeight="1.5">Stunning Landscapes <br /> To <Text fontWeight="bold" as="span" color="#8cc342" className={nothing.className}>Inspire</Text> Your Family</Heading>
 
 									<Text as={Link} href="#about" fontSize="xl" textAlign={["center", "center", "left"]} >Scroll Down <Down /></Text>
 									
@@ -43,9 +42,8 @@ export default function Home() {
 						</Box>
 					</Box>
 				</Box>
-			</Box>
 
-			<Box py="32">
+			<Box pb="32" pt={["10em", "", "", "20em", "28em"]} bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 2%, #fff 100%)">
 				<Container maxW="6xl">
 					<Stack id="about" display={["none", "none", "flex"]} direction="row" gap="5" alignItems="center" mb="6">
 						<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">About Us</Text>
