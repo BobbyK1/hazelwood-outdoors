@@ -294,7 +294,7 @@ export default function Home() {
 									<Box h="fit-content" w="full" padding="5" bgColor="white" borderRadius="5px">
 										<Text fontSize="3xl" color="black" fontWeight="extrabold">Get a quote</Text>
 
-										<Textarea w="full" placeholder="Message" mt="3" />
+										<Textarea w="full" h="24" resize="none" placeholder="Message" mt="3" />
 
 										<Stack direction={["column", "column", "column", "row"]} gap="3" mt="3">
 											<Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="First Name" />
@@ -399,24 +399,23 @@ export default function Home() {
 
 							<Text fontSize="4xl" fontWeight="bold" color="whitesmoke">5 Easy <Text as="span" fontSize="5xl" className={nothing.className} color="#8cc342">Steps</Text></Text>
 
-							<Box h="24em" w="full" mt="4" bgColor="white" borderRadius="5px" px="10" py="5" shadow="lg">
+							<Box h="fit-content" w="full" mt="4" bgColor="white" borderRadius="5px" px="10" py="5" shadow="lg">
 								<Stack direction="row" alignItems="center" gap="4">
 									<Text fontSize="5xl" fontWeight="bold" color="#8cc342">1</Text>
 									<Text fontWeight="bold" fontSize="lg" lineHeight="1.1">Tell us <br /> your vision</Text>
 								</Stack>
 
-								<Textarea mt="4"  placeholder="Hey, I need a quote for..." />
+								<Textarea resize="none" mt="4" h="24" placeholder="Hey, I need a quote for..." />
 
 								<Input type="text" placeholder="Your Name" mt="4" />
 
 								<Input type="text" placeholder="Email" mt="4" />
 
-								<Input type="text" placeholder="Phone" mt="4" />
-
-								<Center mt="1em">
-									<Button maxW="20em" minW="14em" size="xl" color="white" bgColor="rgba(140,195,66,1)" _hover={{ transform: 'scale(1.02)' }}>Send Message</Button>
-								</Center>
+								<Input mb="6" type="text" placeholder="Phone" mt="4" />
 							</Box>
+							<Center mt="-1.5em">
+								<Button maxW="20em" minW="14em" size="xl" color="white" bgColor="rgba(140,195,66,1)" _hover={{ transform: 'scale(1.02)' }}>Send Message</Button>
+							</Center>
 						</Box>
 					</Box>
 				</Box>

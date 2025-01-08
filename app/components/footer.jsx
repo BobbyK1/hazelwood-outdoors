@@ -41,7 +41,7 @@ export default function Footer() {
                                             <Box h="fit-content" maxW="sm" mx="auto" padding="5" bgColor="white" borderRadius="5px">
                                                 <Text fontSize="3xl" color="black" fontWeight="extrabold">Get a quote</Text>
         
-                                                <Textarea w="full" placeholder="Message" mt="3" />
+                                                <Textarea w="full" h="24" resize="none" placeholder="Message" mt="3" />
         
                                                 <Stack direction={["column", "column", "column", "row"]} gap="3" mt="3">
                                                     <Input variant="outline" outline="none" _focus={{ borderColor: "#8cc342", borderWidth: "1px" }} placeholder="First Name" />
