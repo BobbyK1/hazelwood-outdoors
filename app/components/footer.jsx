@@ -1,7 +1,6 @@
-import { Box, Center, Container, Flex, Grid, GridItem, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
-import Image from "next/image";
+import { Box, Center, Container, Flex, Input, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
 import Link from "next/link";
-import { Book, Email, Phone, Schedule, UpwardTrend } from "./icons";
+import { Book, Email, Phone, Schedule } from "./icons";
 import { Playfair_Display } from 'next/font/google'
 import { Button } from "./ui/button";
 

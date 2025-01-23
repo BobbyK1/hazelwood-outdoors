@@ -22,10 +22,56 @@ const playfair = Playfair_Display({
 export default function Home() {
 	return (
 		<>
-				<Box h={["35em", "55em"]} w="full" bgImage="url('/main-cover.jpg')" bgSize="cover" bgPos="center">
-					<Box h="full" w="full" px="5" py="5" background="linear-gradient(to bottom right, rgba(0,0,0,0.2), rgba(0,0,0,0.9))">
-						<Box w="full" borderWidth="2px" borderColor="#8cc342" h="full" pt="56">
-							<Flex px="2" direction="row" w="full" h="full" justifyContent="center">
+			<Box h="50em" w="full">  
+				<Box display={{ base: "block", md: "flex" }} h="full" w="full">  
+					{/* Left Section */}
+					<Box flex="1" h="full" bgImage="url('https://images.pexels.com/photos/29821815/pexels-photo-29821815/free-photo-of-intricate-topiary-design-in-lush-garden-setting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" _hover={{ flex: "1.2" }} className="group">  
+						<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
+							<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
+							<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
+								transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
+								Maintenance  
+							</Heading>  
+							<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }}  
+								transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0"  
+								_groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
+								A bunch of random info!  
+							</Text>  
+							<Button transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
+								_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
+								fontWeight="semibold" bgColor="#8cc342">  
+								Learn More  
+							</Button>  
+							</Flex>  
+						</Box>  
+						</Box>  
+
+						{/* Right Section */}
+						<Box flex="1" h="full" bgImage="url('/main-cover.jpg')" bgSize="cover" bgPos="bottom"  
+						transition="flex 0.5s ease" _hover={{ flex: "1.2" }} className="group">  
+						<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
+							<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
+							<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
+								transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
+								Hardscape  
+							</Heading>  
+							<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }}  
+								transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0"  
+								_groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
+								A bunch of random info!  
+							</Text>  
+							<Button transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
+								_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
+								fontWeight="semibold" bgColor="#8cc342">  
+								Learn More  
+							</Button>  
+							</Flex>  
+						</Box>  
+						</Box>  
+					</Box>  
+				</Box>
+
+				{/* <Flex px="2" direction="row" w="full" h="full" justifyContent="center">
 								<Box minW={["", "", "", "4xl", "5xl"]} color="whitesmoke">
 									<Stack display={["none", "none", "flex"]} direction="row" gap="5" alignItems="center" mb="6">
 										<Text fontSize="2xl" fontWeight="semibold" color="#8cc342">Landscape Pros</Text>
@@ -34,16 +80,13 @@ export default function Home() {
 									
 									<Heading mb="10" as="h1" fontSize={["4xl", "4xl", "6xl"]} className={playfair.className} textAlign={["center", "center", "left"]} lineHeight="1.5">Stunning Landscapes <br /> To <Text fontWeight="bold" as="span" color="#8cc342" className={nothing.className}>Inspire</Text> Your Family</Heading>
 
-									<Text as={Link} href="#about" fontSize="xl" textAlign={["center", "center", "left"]} >Scroll Down <Down /></Text>
+									<Text as={Link} href="#about" fontSize="xl" textAlign={["center", "center", "left"]}>Scroll Down <Down /></Text>
 									
 									<Image aspectRatio="16 / 9" mt="10" src="https://placehold.co/650x400" objectFit="cover" w="full" borderRadius="10px" />
 								</Box>
-							</Flex>
-						</Box>
-					</Box>
-				</Box>
+							</Flex> */}
 
-			<Box pb="32" pt={["10em", "", "", "20em", "28em"]} bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 2%, #fff 100%)">
+			<Box pb="32" pt="20" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 2%, #fff 100%)">
 				<Container maxW="6xl">
 					<Stack id="about" display={["none", "none", "flex"]} direction="row" gap="5" alignItems="center" mb="6">
 						<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">About Us</Text>
