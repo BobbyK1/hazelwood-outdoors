@@ -1,4 +1,4 @@
-import { Box, Center, Circle, Container, Flex, Grid, GridItem, Heading, Image, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
+import { Box, Center, Container, Flex, Grid, GridItem, Heading, Image, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
 import { Build, Check, Conversation, Design, Down, External, Facebook, Google, GoogleFullColor, Insta, Layout, Options, Price, Size, UpwardTrend, Yelp } from "./components/icons";
 import { Button } from "./components/ui/button";
 import Link from "next/link";
@@ -20,7 +20,7 @@ export default function Home() {
 			<Box h="50em" w="full">  
 				<Box display="flex" flexDir={["column", "", "", "row"]} h="full" w="full">  
 					{/* Left Section */}
-					<Box flex="1" h="full" bgImage="url('https://images.pexels.com/photos/29821815/pexels-photo-29821815/free-photo-of-intricate-topiary-design-in-lush-garden-setting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" _hover={{ flex: "1.2" }} className="group">  
+					<Box flex="1" h="full" bgImage="url('https://images.pexels.com/photos/29821815/pexels-photo-29821815/free-photo-of-intricate-topiary-design-in-lush-garden-setting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" className="group">  
 						<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
 							<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
 								<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
@@ -42,8 +42,7 @@ export default function Home() {
 						</Box>  
 
 						{/* Right Section */}
-						<Box flex="1" h="full" bgImage="url('/main-cover.jpg')" bgSize="cover" bgPos="bottom"  
-						transition="flex 0.5s ease" _hover={{ flex: "1.2" }} className="group">  
+						<Box flex="1" h="full" bgImage="url('/main-cover.jpg')" bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" className="group">  
 						<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
 							<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
 							<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  

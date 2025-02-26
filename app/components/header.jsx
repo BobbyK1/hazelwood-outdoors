@@ -8,7 +8,7 @@ import HeaderDrawer from "./header-drawer";
 
 export default function Header() {
     return (
-        <Stack px="14" direction="row" alignItems="center" justify="space-between" h="28" w="full" bg="white">
+        <Stack px={5} direction="row" alignItems="center" justify="space-between" h="28" w="full" bg="white">
                 <Link href="/">
                     <Image src="/logo-transparent.png" height="113" width="150" />
                 </Link>
@@ -18,8 +18,8 @@ export default function Header() {
                             <Text display="flex" flexDir="row" alignItems="center" _hover={{ cursor: "pointer" }}>Services <Down fontSize="sm" ml="1" /></Text>
                         </MenuTrigger>
                         <MenuContent>
-                            <MenuItem as={Link} href="/maintenance" _hover={{ cursor: "pointer" }}><Grass /> Maintenance</MenuItem>
-                            <MenuItem as={Link} href="/design-build" _hover={{ cursor: "pointer" }}><Wrench /> Design • Build</MenuItem>
+                            <MenuItem as={Link} href="/maintenance" value="1" _hover={{ cursor: "pointer" }}><Grass /> Maintenance</MenuItem>
+                            <MenuItem as={Link} href="/design-build" value="2" _hover={{ cursor: "pointer" }}><Wrench /> Design • Build</MenuItem>
                             {/* <MenuItem as={Link} href="/" value="3" _hover={{ cursor: "pointer" }}>Test</MenuItem> */}
                         </MenuContent>
                     </MenuRoot>
