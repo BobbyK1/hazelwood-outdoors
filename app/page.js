@@ -2,10 +2,11 @@ import { Box, Center, Circle, Container, Flex, Grid, GridItem, Heading, Image, I
 import { Build, Check, Conversation, Design, Down, External, Facebook, Google, GoogleFullColor, Insta, Layout, Options, Price, Size, UpwardTrend, Yelp } from "./components/icons";
 import { Button } from "./components/ui/button";
 import Link from "next/link";
-import { Nothing_You_Could_Do, Playfair_Display } from 'next/font/google'
+import { Nothing_You_Could_Do } from 'next/font/google'
 import AnimatedSteps from "./components/ui/animated-steps";
 import { Avatar } from "./components/ui/avatar";
 import StarGroup from "./components/ui/star-group";
+import { playfair } from "./fonts/playfair-display";
 
 const nothing = Nothing_You_Could_Do({
 	subsets: ['latin'],
@@ -13,35 +14,29 @@ const nothing = Nothing_You_Could_Do({
 	weight: ['400']
 })
 
-const playfair = Playfair_Display({
-	subsets: ['latin'],
-	weight: ['400'],
-	display: "swap",
-})
-
 export default function Home() {
 	return (
 		<>
 			<Box h="50em" w="full">  
-				<Box display={{ base: "block", md: "flex" }} h="full" w="full">  
+				<Box display="flex" flexDir={["column", "", "", "row"]} h="full" w="full">  
 					{/* Left Section */}
 					<Box flex="1" h="full" bgImage="url('https://images.pexels.com/photos/29821815/pexels-photo-29821815/free-photo-of-intricate-topiary-design-in-lush-garden-setting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" _hover={{ flex: "1.2" }} className="group">  
 						<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
 							<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
-							<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
-								transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
-								Maintenance  
-							</Heading>  
-							<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }}  
-								transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0"  
-								_groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
-								A bunch of random info!  
-							</Text>  
-							<Button transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
-								_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
-								fontWeight="semibold" bgColor="#8cc342">  
-								Learn More  
-							</Button>  
+								<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
+									transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
+									Maintenance <br /> <Text transition="all 0.2s ease" _groupHover={{ opacity: 0 }} as="span" fontSize="md"><Down /></Text>
+								</Heading>  
+								<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }}  
+									transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0"  
+									_groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
+									View our services to keep your lawn in top shape! 
+								</Text>  
+								<Button as={Link} href="/maintenance" transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
+									_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
+									fontWeight="semibold" bgColor="#8cc342">  
+									Learn More  
+								</Button>  
 							</Flex>  
 						</Box>  
 						</Box>  
@@ -53,14 +48,12 @@ export default function Home() {
 							<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
 							<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
 								transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
-								Hardscape  
+								Design • Build  <br /> <Text transition="all 0.2s ease" _groupHover={{ opacity: 0 }} as="span" fontSize="md"><Down /></Text>
 							</Heading>  
-							<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }}  
-								transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0"  
-								_groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
-								A bunch of random info!  
+							<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }} transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0" _groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
+								Discover how we plan design and build your hardscape dreams!
 							</Text>  
-							<Button transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
+							<Button as={Link} href="/design-build" transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
 								_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
 								fontWeight="semibold" bgColor="#8cc342">  
 								Learn More  
@@ -90,7 +83,7 @@ export default function Home() {
 				<Container maxW="6xl">
 					<Stack id="about" display={["none", "none", "flex"]} direction="row" gap="5" alignItems="center" mb="6">
 						<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">About Us</Text>
-						<Separator borderColor="#8cc342" maxW="52" />
+						<Separator borderColor="#8cc342" maxW="52" minW="52" />
 					</Stack>
 					<Grid borderRadius="5px" px="2" templateColumns="repeat(2, 1fr)" gap="10">
 						<GridItem colSpan={[2, 2, 2, 1]}>
@@ -164,7 +157,7 @@ export default function Home() {
 						<GridItem justifyContent="center" alignItems="center" colSpan={[12, 12, 12, 8]}>
 							<Stack direction="row" gap="5" alignItems="center" mb="6">
 								<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Design Packages</Text>
-								<Separator borderColor="#8cc342" maxW="24" />
+								<Separator borderColor="#8cc342" maxW="24" minW="24" />
 							</Stack>
 
 							<Grid mb="3" _hover={{ bgColor: "rgba(140,195,66,0.2)" }} transition="0.2s ease" w="full" templateColumns="repeat(12, 1fr)" minH="44">
@@ -224,7 +217,7 @@ export default function Home() {
 					</Grid>
 				</Box>
 
-				<Box px="10" h="fit-content">
+				{/* <Box px="10" h="fit-content">
 					<Box position="relative" borderRadius="15px" mt="40" maxW="6xl" mx="auto" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1460533893735-45cea2212645?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
 						<Flex flexDirection="column" justifyItems="center" color="whitesmoke" borderRadius="15px" maxW="full" bgGradient="linear-gradient(to bottom right, rgba(0,0,0,0.8), rgba(0,0,0,0.2))" px={[10, 10, 10, 24]} py="20">
 						<Stack direction={["column", "", "", "row"]} alignItems="center" gap="5" w="full">
@@ -245,7 +238,7 @@ export default function Home() {
 						</Stack>
 						</Flex>
 					</Box>
-				</Box>
+				</Box> */}
 
 
 				<Box my="44">
@@ -432,7 +425,7 @@ export default function Home() {
 					</Center>
 				</Container>
 
-				<Box mb="60" h="45em" mt="20" w="full" bgPos="center" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1734079692147-c6fc9438a2d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dx')">
+				{/* <Box mb="60" h="45em" mt="20" w="full" bgPos="center" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1734079692147-c6fc9438a2d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dx')">
 					<Box h="45em" py="20" px={[5, 5, 5, 14]} borderRadius="5px" shadow="2xl" bgColor="rgba(0,0,0,0.45)">
 						<Box ml={[0, 0, 0, "20em"]} mt="15em" maxW="md">
 							<Stack direction="row" gap="5" alignItems="center" mb="6">
@@ -463,7 +456,7 @@ export default function Home() {
 					</Box>
 				</Box>
 
-				<AnimatedSteps />
+				<AnimatedSteps /> */}
 
 				<Container maxW="5xl" shadow="2xl" py="10" mt="20" px="10">
 					<Text fontSize="3xl" textAlign="center">"An example of a client testimonial. <Text as="span" fontWeight="bold">Really shows how well this company works!</Text>"</Text>

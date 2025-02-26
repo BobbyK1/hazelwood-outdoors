@@ -1,14 +1,8 @@
 import { Box, Center, Container, Flex, Input, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
 import Link from "next/link";
 import { Book, Email, Phone, Schedule } from "./icons";
-import { Playfair_Display } from 'next/font/google'
 import { Button } from "./ui/button";
-
-const playfair = Playfair_Display({
-    subsets: ['latin'],
-    weight: ['400'],
-    display: "swap",
-})
+import { playfair } from "../fonts/playfair-display";
 
 
 export default function Footer() {
