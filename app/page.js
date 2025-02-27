@@ -2,6 +2,7 @@ import { Box, Center, Container, Flex, Grid, GridItem, Heading, Image, Input, Se
 import { Build, Check, Conversation, Design, Down, External, Facebook, Google, GoogleFullColor, Insta, Layout, Options, Price, Size, UpwardTrend, Yelp } from "./components/icons";
 import { Button } from "./components/ui/button";
 import Link from "next/link";
+import NextImage from 'next/image'
 import { Nothing_You_Could_Do } from 'next/font/google'
 import AnimatedSteps from "./components/ui/animated-steps";
 import { Avatar } from "./components/ui/avatar";
@@ -42,23 +43,23 @@ export default function Home() {
 						</Box>  
 
 						{/* Right Section */}
-						<Box flex="1" h="full" bgImage="url('/main-cover.jpg')" bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" className="group">  
-						<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
-							<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
-							<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
-								transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
-								Design • Build  <br /> <Text transition="all 0.2s ease" _groupHover={{ opacity: 0 }} as="span" fontSize="md"><Down /></Text>
-							</Heading>  
-							<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }} transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0" _groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
-								Discover how we plan design and build your hardscape dreams!
-							</Text>  
-							<Button as={Link} href="/design-build" transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
-								_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
-								fontWeight="semibold" bgColor="#8cc342">  
-								Learn More  
-							</Button>  
-							</Flex>  
-						</Box>  
+						<Box flex="1" h="full" backgroundImage={'url(/cabana.jpg)'} bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" className="group">  
+							<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
+								<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
+									<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
+										transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
+										Design • Build  <br /> <Text transition="all 0.2s ease" _groupHover={{ opacity: 0 }} as="span" fontSize="md"><Down /></Text>
+									</Heading>
+									<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }} transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0" _groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
+										Discover how we plan, design, and build your hardscape dreams!
+									</Text>
+									<Button as={Link} href="/design-build" transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
+										_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
+										fontWeight="semibold" bgColor="#8cc342">  
+										Learn More  
+									</Button>
+								</Flex>
+							</Box>
 						</Box>  
 					</Box>  
 				</Box>
@@ -119,27 +120,29 @@ export default function Home() {
 					</Grid>
 
 					<SimpleGrid mt="10" columns={[1, 1, 2, 3]} alignItems="center" justifyContent="center" gap="6">
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgColor="rgba(0,0,0,0.2)" bgImage="url('/planning.jpg')" bgPos="center" bgSize="cover" borderRadius="lg">
+							<Box>
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Design</Box>
+							</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/home.jpg')" bgPos="bottom" bgSize="cover" borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Landscaping</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/backyard-under-construction.jpg')" bgPos="center" bgSize="cover"borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Hardscaping</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/pergola.jpg')" bgPos="center" bgSize="cover" borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Pergolas & Cabanas</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/outdoor-kitchen.jpg')" bgPos="center" bgSize="cover" borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Outdoor Kitchens</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/fireplace.jpg')" bgPos="center" bgSize="cover" borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Fire Pits & Fire Places</Box>
 						</Box>
 					</SimpleGrid>
@@ -150,7 +153,7 @@ export default function Home() {
 				<Box px={[2, 2, 2, 10]}>
 					<Grid minH="20" templateColumns="repeat(12, 1fr)" gap="5">
 						<GridItem display={["none", "none", "none", "grid"]} colSpan="4" alignContent="center" justifyContent="center">
-							<Image src="https://placehold.co/600x400" />
+							<Image src="/drawing.jpg" />
 						</GridItem>
 
 						<GridItem justifyContent="center" alignItems="center" colSpan={[12, 12, 12, 8]}>
@@ -424,7 +427,7 @@ export default function Home() {
 					</Center>
 				</Container>
 
-				{/* <Box mb="60" h="45em" mt="20" w="full" bgPos="center" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1734079692147-c6fc9438a2d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dx')">
+				<Box mb="60" h="45em" mt="20" w="full" bgPos="center" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1734079692147-c6fc9438a2d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dx')">
 					<Box h="45em" py="20" px={[5, 5, 5, 14]} borderRadius="5px" shadow="2xl" bgColor="rgba(0,0,0,0.45)">
 						<Box ml={[0, 0, 0, "20em"]} mt="15em" maxW="md">
 							<Stack direction="row" gap="5" alignItems="center" mb="6">
@@ -455,7 +458,7 @@ export default function Home() {
 					</Box>
 				</Box>
 
-				<AnimatedSteps /> */}
+				<AnimatedSteps />
 
 				<Container maxW="5xl" shadow="2xl" py="10" mt="20" px="10">
 					<Text fontSize="3xl" textAlign="center">"An example of a client testimonial. <Text as="span" fontWeight="bold">Really shows how well this company works!</Text>"</Text>

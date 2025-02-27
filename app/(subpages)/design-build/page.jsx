@@ -1,5 +1,6 @@
 import { playfair } from "@/app/fonts/playfair-display";
-import { Box, Button, Center, Container, Flex, GridItem, Heading, Image, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
+import { Box, Button, Center, Container, Flex, GridItem, Heading, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
+import Image from "next/image";
 
 
 export default function DesignBuild() {
@@ -21,7 +22,7 @@ export default function DesignBuild() {
                         <Text lineHeight="1.8">Landscape Design is a creative process that brings to life the dreams of homeowners. Each homeowner has a unique vision for their property and with the help of an expert landscape designer, this vision can be brought to life. The first step in the process is an on-site assessment to understand the client’s vision, lifestyle and requirements that will give you a clear idea of what is needed.</Text>
                     </GridItem>
 
-                    <Image src="/drawing.png" w="full" shadow="sm" />
+                    <Image width="600" height="300" src="/drawing.jpg" shadow="sm" />
                 </SimpleGrid>
 
                 <Box mt="32">
@@ -77,7 +78,7 @@ export default function DesignBuild() {
                         </Box>
                     </Container>
 
-                    <Box px="10" h="fit-content">
+                    <Box px={[0, 0, 0, 10]} h="fit-content">
                         <Box position="relative" borderRadius="15px" mt="40" maxW="6xl" mx="auto" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1460533893735-45cea2212645?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
                             <Flex flexDirection="column" justifyItems="center" color="whitesmoke" borderRadius="15px" maxW="full" bgGradient="linear-gradient(to bottom right, rgba(0,0,0,0.8), rgba(0,0,0,0.2))" px={[10, 10, 10, 24]} py="20">
                             <Stack direction={["column", "", "", "row"]} alignItems="center" gap="5" w="full">
