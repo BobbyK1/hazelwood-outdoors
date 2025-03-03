@@ -81,23 +81,27 @@ export default function Home() {
 
 			<Box pb="32" pt="20" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 2%, #fff 100%)">
 				<Container maxW="6xl">
-					<Stack id="about" display={["none", "none", "flex"]} direction="row" gap="5" alignItems="center" mb="6">
-						<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">About Us</Text>
-						<Separator borderColor="#8cc342" maxW="52" minW="52" />
-					</Stack>
+					<Box pos="relative">
+						<Box pos="absolute" top={0} left={0} right={0} bottom={0}>
+							<Text fontSize={["7em", "", "7.5em", "10em"]} mt={[-4, 4, 4, 0]} color="blackAlpha.100" lineHeight="0.8" fontWeight="bold" className={playfair.className} textAlign="center">LAWN CARE</Text>
+						</Box>
+						<Stack id="about" mt="4" direction="row" gap="5" alignItems="center" mb="14" mx="auto" w="fit-content">
+							<Separator  borderColor="#8cc342" maxW="20" minW="20" />
+							<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase" textWrap="nowrap">About Us</Text>
+							<Separator borderColor="#8cc342" maxW="20" minW="20" />
+						</Stack>
+					</Box>
 					<Grid borderRadius="5px" px="2" templateColumns="repeat(2, 1fr)" gap="10">
-						<GridItem colSpan={[2, 2, 2, 1]}>
-							<Heading mt="5" as="h2" fontWeight="bold" fontSize="3xl" textTransform="uppercase">Hazelwood Outdoors</Heading>
-							<Text mt="5" mb="5" fontSize="md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere ac diam eget sodales. Quisque rhoncus elit sed ligula accumsan, eu pellentesque mi viverra. Integer et erat efficitur, dictum diam eu, mollis nunc. Suspendisse gravida commodo tellus, sit amet faucibus nisl tempus id</Text>
+						<GridItem colSpan={2}>
+							<Heading textAlign="center" as="h2" fontWeight="bold" fontSize={["3xl", "5xl"]} textTransform="uppercase" lineHeight="1.1">Hazelwood Outdoors</Heading>
+							<Text maxW="4xl" mx="auto" textAlign="center" my="20" fontSize="md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere ac diam eget sodales. Quisque rhoncus elit sed ligula accumsan, eu pellentesque mi viverra. Integer et erat efficitur, dictum diam eu, mollis nunc. Suspendisse gravida commodo tellus, sit amet faucibus nisl tempus id</Text>
 						
-							<Text fontSize="lg" color="#555" mt="10" fontWeight="bold">Speak with a landscape expert</Text>
+							{/* <Text fontSize="lg" color="#555" mt="10" fontWeight="bold">Speak with a landscape expert</Text>	 */}
 
-							<Button variant="ghost" mt="10" size="lg"><Conversation color="#8cc342" fontSize="3xl" /> Talk with us</Button>
+							{/* <Button variant="ghost" mt="10" size="lg"><Conversation color="#8cc342" fontSize="3xl" /> Talk with us</Button> */}
 						</GridItem>
-						<GridItem colSpan={[2, 2, 2, 1]}>
+						{/* <GridItem colSpan={[2, 2, 2, 1]}>
 							<Box>
-
-
 								<Stack my="3" direction="row" gap="8">
 									<Design color="#8cc342" fontSize="5xl" />
 									<Box>
@@ -115,10 +119,17 @@ export default function Home() {
 										<Text mt="2" fontSize="md">Our contractors have decades of experience in building & creating dream spaces.</Text>
 									</Box>
 								</Stack>
+
+							<Button variant="ghost" mt="10" size="lg"><Conversation color="#8cc342" fontSize="3xl" /> Talk with us</Button>
+
 							</Box>
-						</GridItem>
+						</GridItem> */}
 					</Grid>
 
+					<Stack id="about" direction="row" gap="5" alignItems="center" mb="6">
+						<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Specialties</Text>
+						<Separator borderColor="#8cc342" maxW="20" minW="20" />
+					</Stack>
 					<SimpleGrid mt="10" columns={[1, 1, 2, 3]} alignItems="center" justifyContent="center" gap="6">
 						<Box w="full" h="52" px="16" bgColor="rgba(0,0,0,0.2)" bgImage="url('/planning.jpg')" bgPos="center" bgSize="cover" borderRadius="lg">
 							<Box>
@@ -148,76 +159,7 @@ export default function Home() {
 					</SimpleGrid>
 				</Container>
 
-				<Separator variant="dashed" my="24" maxW="4xl" mx="auto" />
-
-				<Box px={[2, 2, 2, 10]}>
-					<Grid minH="20" templateColumns="repeat(12, 1fr)" gap="5">
-						<GridItem display={["none", "none", "none", "grid"]} colSpan="4" alignContent="center" justifyContent="center">
-							<Image src="/drawing.jpg" />
-						</GridItem>
-
-						<GridItem justifyContent="center" alignItems="center" colSpan={[12, 12, 12, 8]}>
-							<Stack direction="row" gap="5" alignItems="center" mb="6">
-								<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Design Packages</Text>
-								<Separator borderColor="#8cc342" maxW="24" minW="24" />
-							</Stack>
-
-							<Grid mb="3" _hover={{ bgColor: "rgba(140,195,66,0.2)" }} transition="0.2s ease" w="full" templateColumns="repeat(12, 1fr)" minH="44">
-								<GridItem px="2" bgColor="rgba(0,0,0,0.05)" colSpan="7" textAlign="center" py="2" alignContent="center">
-									<Text fontSize={["lg", "lg", "lg", "2xl"]} fontWeight="bold">Essentials - 2D</Text>
-									<Separator maxW="xs" mx="auto" borderColor="#000" my="2" />
-									<Text fontSize="sm">2D only. What you need to get rolling. <br /> Measurements and property survey <br />Site map, hardscape plan, lighting plan, plant list <br /> 2 revisions</Text>
-								</GridItem>
-
-								<GridItem colSpan="5" px="1" fontSize={["md", "md", "lg", "2xl"]} fontWeight="bold" textAlign="center" alignContent="center">
-									<Text>Turnaround: ~4 weeks</Text>
-									<Text>Front OR Back</Text>
-									<Text>Full Property</Text>
-								</GridItem>
-							</Grid>
-
-							<Grid mb="3" _hover={{ bgColor: "rgba(140,195,66,0.2)" }} transition="0.2s ease" w="full" templateColumns="repeat(12, 1fr)" minH="44">
-								<GridItem px="2" bgColor="rgba(0,0,0,0.05)" colSpan="7" textAlign="center" py="2" alignContent="center">
-									<Text fontSize={["lg", "lg", "lg", "2xl"]} fontWeight="bold">Essentials - 3D</Text>
-									<Separator maxW="xs" mx="auto" borderColor="#000" my="2" />
-									<Text fontSize="sm">Most Popular. <br /> 2D & 3D design renderings <br /> Measurements and property survey <br />Site map, hardscape plan, lighting plan, plant list Material selection <br /> 3 revisions</Text>
-								</GridItem>
-
-								<GridItem colSpan="5" px="1" fontSize={["md", "md", "lg", "2xl"]} fontWeight="bold" textAlign="center" alignContent="center">
-									<Text>Turnaround: ~6 weeks</Text>
-									<Text>Front OR Back</Text>
-									<Text>Full Property</Text>
-								</GridItem>
-							</Grid>
-
-							<Grid mb="3" _hover={{ bgColor: "rgba(140,195,66,0.2)" }} transition="0.2s ease" w="full" templateColumns="repeat(12, 1fr)" minH="44">
-								<GridItem px="2" bgColor="rgba(0,0,0,0.05)" colSpan="7" textAlign="center" py="2" alignContent="center">
-									<Text fontSize={["lg", "lg", "lg", "2xl"]} fontWeight="bold">Premium - Outdoor Transformation</Text>
-									<Separator maxW="xs" mx="auto" borderColor="#000" my="2" />
-									<Text fontSize="sm">Everything thats included in ‘Essentials 3D’ <br /> + Design new home exterior, paint, windows, doors, roof & more’ <br />+ Custom, shoppable furniture, appliance & decor selections’ <br /> + Contractor build support’ <br />+ 4 revisions</Text>
-								</GridItem>
-
-								<GridItem px="1" fontSize={["md", "md", "lg", "2xl"]} fontWeight="bold" colSpan="5" textAlign="center" alignContent="center">
-									<Text>Turnaround: ~6-8 weeks</Text>
-									<Text>Front OR Back</Text>
-									<Text>Full Property</Text>
-								</GridItem>
-							</Grid>
-
-							<Grid _hover={{ bgColor: "rgba(140,195,66,0.2)" }} transition="0.2s ease" w="full" templateColumns="repeat(12, 1fr)" minH="44">
-								<GridItem px="2" bgColor="rgba(0,0,0,0.05)" colSpan="7" textAlign="center" py="2" alignContent="center">
-									<Text fontSize={["lg", "lg", "lg", "2xl"]} fontWeight="bold">Custom Pricing</Text>
-									<Separator maxW="xs" mx="auto" borderColor="#000" my="2" />
-									<Text fontSize="sm">Properties over 1/2 acre <br /> Properties with unusual terrain or steep inclines/hills <br /> Projects needing a brand new pool design (refinishing existing pools can be done with normal package) <br /> Commercial property</Text>
-								</GridItem>
-
-								<GridItem colSpan="5" px="1" fontSize={["md", "md", "lg", "2xl"]} fontWeight="bold" textAlign="center" alignContent="center">
-									<Text fontStyle="italic">Schedule Call <br /> with Designer</Text>
-								</GridItem>
-							</Grid>
-						</GridItem>
-					</Grid>
-				</Box>
+				
 
 				{/* <Box px="10" h="fit-content">
 					<Box position="relative" borderRadius="15px" mt="40" maxW="6xl" mx="auto" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1460533893735-45cea2212645?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
@@ -684,15 +626,15 @@ export default function Home() {
 
 					<Container maxW="6xl" mt="20">
 						<Stack direction={["column", "", "row", "row"]} alignItems="start" h="fit-content">
-							<Text fontSize={["9xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">15</Text>
+							<Text fontSize={["8xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">15</Text>
 							<Text fontSize="2xl" mt={["0", "", "1.5em", "3em"]} fontWeight="bold">% Avg Increase <br /> In Home Value</Text>
 						</Stack>
 						<Stack mt={["0", "", "-7em", "-17em"]} direction={["column", "", "row", "row"]} alignItems="start" h="fit-content" ml={[0, 0, "auto", "auto"]} w="fit-content">
-							<Text fontSize={["9xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">297</Text>
+							<Text fontSize={["8xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">297</Text>
 							<Text fontSize="2xl" mt={["0", "", "1.5em", "3em"]} fontWeight="bold">Breathtaking <br /> Spaces Created</Text>
 						</Stack>
 						<Stack mt={["0", "", "-2em", "-5em"]} direction={["column", "", "row", "row"]} alignItems="start" h="fit-content" w="fit-content" mx={[0, 0, "auto", "auto"]}>
-							<Text fontSize={["9xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">14,567</Text>
+							<Text fontSize={["8xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">14,567</Text>
 							<Box>
 								<Text fontSize="2xl" mt={["0", "", "1.5em", "3em"]} fontWeight="bold">Hydrangeas Planted*</Text>
 								<Text fontSize="xl" fontStyle="italic">*Guesstimate. We don’t actually count.</Text>
