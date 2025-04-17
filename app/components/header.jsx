@@ -1,31 +1,34 @@
-import { Box, Container, DrawerTrigger, Grid, GridItem, IconButton, Separator, Stack, Text } from "@chakra-ui/react";
+import { Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
 import Link from "next/link";
-import { Down, External, Hamburger } from "./icons";
-import { DrawerBackdrop, DrawerBody, DrawerContent, DrawerRoot } from "./ui/drawer";
-import { AccordionItem, AccordionItemContent, AccordionItemTrigger, AccordionRoot } from "./ui/accordion";
+import { Down, External, Grass, Wrench } from "./icons";
+import HeaderDrawer from "./header-drawer";
 
 export default function Header() {
     return (
-        <Stack px="14" direction="row" alignItems="center" justify="space-between" h="28" w="full" bg="white">
-                <Image src="/logo-transparent.png" height="113" width="150" />
-                <Stack direction="row" gap="4" alignItems="center">
+        <Stack px={5} direction="row" alignItems="center" justify="space-between" h="28" w="full" bg="white">
+                <Link href="/">
+                    <Image src="/logo-transparent.png" height="113" width="150" />
+                </Link>
+                <Stack display={["none", "", "", "flex"]} direction="row" gap="8" alignItems="center">
                     <MenuRoot>
                         <MenuTrigger asChild>
                             <Text display="flex" flexDir="row" alignItems="center" _hover={{ cursor: "pointer" }}>Services <Down fontSize="sm" ml="1" /></Text>
                         </MenuTrigger>
-                        <MenuContent size="md">
-                            <MenuItem as={Link} href="/" value="1" _hover={{ cursor: "pointer" }}>Test</MenuItem>
-                            <MenuItem as={Link} href="/" value="2" _hover={{ cursor: "pointer" }}>Test</MenuItem>
-                            <MenuItem as={Link} href="/" value="3" _hover={{ cursor: "pointer" }}>Test</MenuItem>
+                        <MenuContent>
+                            <MenuItem as={Link} href="/maintenance" value="1" _hover={{ cursor: "pointer" }}><Grass /> Maintenance</MenuItem>
+                            <MenuItem as={Link} href="/design-build" value="2" _hover={{ cursor: "pointer" }}><Wrench /> Design • Build</MenuItem>
+                            {/* <MenuItem as={Link} href="/" value="3" _hover={{ cursor: "pointer" }}>Test</MenuItem> */}
                         </MenuContent>
                     </MenuRoot>
                     <Text as={Link} href="/">Careers</Text>
                     <Text as={Link} href="/">Contact Us</Text>
                     <Button color="whitesmoke" bgColor="#8cc342" fontWeight="semibold">Login <External /></Button>
                 </Stack>
+                <HeaderDrawer />
+                
                 {/* <GridItem colSpan={7} display={["none", "none", "none", "flex"]} alignItems="center">
                     <Stack direction="row" alignItems="center" gap="8">
                         <MenuRoot>

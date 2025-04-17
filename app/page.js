@@ -1,11 +1,14 @@
-import { Box, Center, Circle, Container, Flex, Grid, GridItem, Heading, Image, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
+import { Box, Center, Container, Flex, Grid, GridItem, Heading, Image, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
 import { Build, Check, Conversation, Design, Down, External, Facebook, Google, GoogleFullColor, Insta, Layout, Options, Price, Size, UpwardTrend, Yelp } from "./components/icons";
 import { Button } from "./components/ui/button";
 import Link from "next/link";
-import { Nothing_You_Could_Do, Playfair_Display } from 'next/font/google'
+import NextImage from 'next/image'
+import { Nothing_You_Could_Do } from 'next/font/google'
 import AnimatedSteps from "./components/ui/animated-steps";
 import { Avatar } from "./components/ui/avatar";
 import StarGroup from "./components/ui/star-group";
+import { playfair } from "./fonts/playfair-display";
+import ReadMore from "./components/ui/read-more";
 
 const nothing = Nothing_You_Could_Do({
 	subsets: ['latin'],
@@ -13,60 +16,51 @@ const nothing = Nothing_You_Could_Do({
 	weight: ['400']
 })
 
-const playfair = Playfair_Display({
-	subsets: ['latin'],
-	weight: ['400'],
-	display: "swap",
-})
-
 export default function Home() {
 	return (
 		<>
 			<Box h="50em" w="full">  
-				<Box display={{ base: "block", md: "flex" }} h="full" w="full">  
+				<Box display="flex" flexDir={["column", "", "", "row"]} h="full" w="full">  
 					{/* Left Section */}
-					<Box flex="1" h="full" bgImage="url('https://images.pexels.com/photos/29821815/pexels-photo-29821815/free-photo-of-intricate-topiary-design-in-lush-garden-setting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" _hover={{ flex: "1.2" }} className="group">  
+					<Box flex="1" h="full" bgImage="url('https://images.pexels.com/photos/29821815/pexels-photo-29821815/free-photo-of-intricate-topiary-design-in-lush-garden-setting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" className="group">  
 						<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
 							<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
-							<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
-								transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
-								Maintenance  
-							</Heading>  
-							<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }}  
-								transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0"  
-								_groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
-								A bunch of random info!  
-							</Text>  
-							<Button transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
-								_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
-								fontWeight="semibold" bgColor="#8cc342">  
-								Learn More  
-							</Button>  
+								<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
+									transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
+									Maintenance <br /> <Text transition="all 0.2s ease" _groupHover={{ opacity: 0 }} as="span" fontSize="md"><Down /></Text>
+								</Heading>  
+								<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }}  
+									transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0"  
+									_groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
+									View our services to keep your lawn in top shape! 
+								</Text>  
+								<Button as={Link} href="/maintenance" transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
+									_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
+									fontWeight="semibold" bgColor="#8cc342">  
+									Learn More  
+								</Button>  
 							</Flex>  
 						</Box>  
 						</Box>  
 
 						{/* Right Section */}
-						<Box flex="1" h="full" bgImage="url('/main-cover.jpg')" bgSize="cover" bgPos="bottom"  
-						transition="flex 0.5s ease" _hover={{ flex: "1.2" }} className="group">  
-						<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
-							<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
-							<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
-								transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
-								Hardscape  
-							</Heading>  
-							<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }}  
-								transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0"  
-								_groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
-								A bunch of random info!  
-							</Text>  
-							<Button transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
-								_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
-								fontWeight="semibold" bgColor="#8cc342">  
-								Learn More  
-							</Button>  
-							</Flex>  
-						</Box>  
+						<Box flex="1" h="full" backgroundImage={'url(/cabana.jpg)'} bgSize="cover" bgPos="bottom" transition="flex 0.5s ease" className="group">  
+							<Box h="full" w="full" px={{ base: "3", md: "5" }} py={{ base: "3", md: "5" }} background="linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7))">  
+								<Flex h="full" w="full" color="whitesmoke" alignItems="center" justifyContent="center" flexDir="column" textAlign="center">  
+									<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} className={playfair.className}  
+										transition="all 0.5s ease" transform="translateY(1.3em)" opacity="1" _groupHover={{ transform: "translateY(-20px)" }}>  
+										Design • Build  <br /> <Text transition="all 0.2s ease" _groupHover={{ opacity: 0 }} as="span" fontSize="md"><Down /></Text>
+									</Heading>
+									<Text fontSize={{ base: "md", md: "xl" }} mt={{ base: "5", md: "10" }} transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)" opacity="0" _groupHover={{ opacity: 1, transform: "translateY(0)" }}>  
+										Discover how we plan, design, and build your hardscape dreams!
+									</Text>
+									<Button as={Link} href="/design-build" transition="opacity 0.2s ease, transform 0.2s ease" transform="translateY(20px)"  
+										_groupHover={{ opacity: 1, transform: "translateY(0)" }} mt={{ base: "5", md: "10" }} opacity="0" size="lg"  
+										fontWeight="semibold" bgColor="#8cc342">  
+										Learn More  
+									</Button>
+								</Flex>
+							</Box>
 						</Box>  
 					</Box>  
 				</Box>
@@ -88,23 +82,29 @@ export default function Home() {
 
 			<Box pb="32" pt="20" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 2%, #fff 100%)">
 				<Container maxW="6xl">
-					<Stack id="about" display={["none", "none", "flex"]} direction="row" gap="5" alignItems="center" mb="6">
-						<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">About Us</Text>
-						<Separator borderColor="#8cc342" maxW="52" />
-					</Stack>
+					<Box pos="relative">
+						<Box pos="absolute" top={0} left={0} right={0} bottom={0}>
+							<Text fontSize={["7em", "", "7.5em", "10em"]} mt={[-4, 4, 4, 0]} color="blackAlpha.100" lineHeight="0.8" fontWeight="bold" className={playfair.className} textAlign="center">HAZELWOOD</Text>
+						</Box>
+						<Stack id="about" mt="4" direction="row" gap="5" alignItems="center" mb="14" mx="auto" w="fit-content">
+							<Separator  borderColor="#8cc342" maxW="20" minW="20" />
+							<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase" textWrap="nowrap">About Us</Text>
+							<Separator borderColor="#8cc342" maxW="20" minW="20" />
+						</Stack>
+					</Box>
 					<Grid borderRadius="5px" px="2" templateColumns="repeat(2, 1fr)" gap="10">
-						<GridItem colSpan={[2, 2, 2, 1]}>
-							<Heading mt="5" as="h2" fontWeight="bold" fontSize="3xl" textTransform="uppercase">Hazelwood Outdoors</Heading>
-							<Text mt="5" mb="5" fontSize="md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere ac diam eget sodales. Quisque rhoncus elit sed ligula accumsan, eu pellentesque mi viverra. Integer et erat efficitur, dictum diam eu, mollis nunc. Suspendisse gravida commodo tellus, sit amet faucibus nisl tempus id</Text>
+						<GridItem colSpan={2}>
+							<Heading textAlign="center" as="h2" fontWeight="bold" fontSize={["3xl", "5xl"]} textTransform="uppercase" lineHeight="1.1">Hazelwood Outdoors</Heading>
+							<Text maxW="4xl" mx="auto" textAlign="center" my="20" fontSize="md">We design and maintain landscapes that bring beauty, value, and connection to our community. By creating spaces where families gather, neighbors bond, and memories are made, we make life simpler and more meaningful for those we serve. We honor our commitments, prioritize safety, and make it easy to work with us.
+							<br /> <br />
+							We invest in people helping our employees achieve their dreams, support their families, and build better lives. Through deep partnerships, skilled craftsmanship, and shared success, we create opportunities for growth, happiness, and connection. Together, we aim to inspire trust, celebrate life, and reconnect the world one project at a time.</Text>
 						
-							<Text fontSize="lg" color="#555" mt="10" fontWeight="bold">Speak with a landscape expert</Text>
+							{/* <Text fontSize="lg" color="#555" mt="10" fontWeight="bold">Speak with a landscape expert</Text>	 */}
 
-							<Button variant="ghost" mt="10" size="lg"><Conversation color="#8cc342" fontSize="3xl" /> Talk with us</Button>
+							{/* <Button variant="ghost" mt="10" size="lg"><Conversation color="#8cc342" fontSize="3xl" /> Talk with us</Button> */}
 						</GridItem>
-						<GridItem colSpan={[2, 2, 2, 1]}>
+						{/* <GridItem colSpan={[2, 2, 2, 1]}>
 							<Box>
-
-
 								<Stack my="3" direction="row" gap="8">
 									<Design color="#8cc342" fontSize="5xl" />
 									<Box>
@@ -122,109 +122,49 @@ export default function Home() {
 										<Text mt="2" fontSize="md">Our contractors have decades of experience in building & creating dream spaces.</Text>
 									</Box>
 								</Stack>
+
+							<Button variant="ghost" mt="10" size="lg"><Conversation color="#8cc342" fontSize="3xl" /> Talk with us</Button>
+
 							</Box>
-						</GridItem>
+						</GridItem> */}
 					</Grid>
 
+					<Stack id="about" direction="row" gap="5" alignItems="center" mb="6">
+						<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Specialties</Text>
+						<Separator borderColor="#8cc342" maxW="20" minW="20" />
+					</Stack>
 					<SimpleGrid mt="10" columns={[1, 1, 2, 3]} alignItems="center" justifyContent="center" gap="6">
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgColor="rgba(0,0,0,0.2)" bgImage="url('/planning.jpg')" bgPos="center" bgSize="cover" borderRadius="lg">
+							<Box>
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Design</Box>
+							</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/home.jpg')" bgPos="bottom" bgSize="cover" borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Landscaping</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/backyard-under-construction.jpg')" bgPos="center" bgSize="cover"borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Hardscaping</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/pergola.jpg')" bgPos="center" bgSize="cover" borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Pergolas & Cabanas</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/outdoor-kitchen.jpg')" bgPos="center" bgSize="cover" borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Outdoor Kitchens</Box>
 						</Box>
 
-						<Box w="full" h="52" px="16" bgImage="url('https://placehold.co/350x200')" borderRadius="lg">
+						<Box w="full" h="52" px="16" bgImage="url('/fireplace.jpg')" bgPos="center" bgSize="cover" borderRadius="lg">
 							<Box bgColor="#8cc342" py="1" mt="12em" textAlign="center" color="whitesmoke" rounded="full" fontWeight="semibold">Fire Pits & Fire Places</Box>
 						</Box>
 					</SimpleGrid>
 				</Container>
 
-				<Separator variant="dashed" my="24" maxW="4xl" mx="auto" />
+				
 
-				<Box px={[2, 2, 2, 10]}>
-					<Grid minH="20" templateColumns="repeat(12, 1fr)" gap="5">
-						<GridItem display={["none", "none", "none", "grid"]} colSpan="4" alignContent="center" justifyContent="center">
-							<Image src="https://placehold.co/600x400" />
-						</GridItem>
-
-						<GridItem justifyContent="center" alignItems="center" colSpan={[12, 12, 12, 8]}>
-							<Stack direction="row" gap="5" alignItems="center" mb="6">
-								<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Design Packages</Text>
-								<Separator borderColor="#8cc342" maxW="24" />
-							</Stack>
-
-							<Grid mb="3" _hover={{ bgColor: "rgba(140,195,66,0.2)" }} transition="0.2s ease" w="full" templateColumns="repeat(12, 1fr)" minH="44">
-								<GridItem px="2" bgColor="rgba(0,0,0,0.05)" colSpan="7" textAlign="center" py="2" alignContent="center">
-									<Text fontSize={["lg", "lg", "lg", "2xl"]} fontWeight="bold">Essentials - 2D</Text>
-									<Separator maxW="xs" mx="auto" borderColor="#000" my="2" />
-									<Text fontSize="sm">2D only. What you need to get rolling. <br /> Measurements and property survey <br />Site map, hardscape plan, lighting plan, plant list <br /> 2 revisions</Text>
-								</GridItem>
-
-								<GridItem colSpan="5" px="1" fontSize={["md", "md", "lg", "2xl"]} fontWeight="bold" textAlign="center" alignContent="center">
-									<Text>Turnaround: ~4 weeks</Text>
-									<Text>Front OR Back</Text>
-									<Text>Full Property</Text>
-								</GridItem>
-							</Grid>
-
-							<Grid mb="3" _hover={{ bgColor: "rgba(140,195,66,0.2)" }} transition="0.2s ease" w="full" templateColumns="repeat(12, 1fr)" minH="44">
-								<GridItem px="2" bgColor="rgba(0,0,0,0.05)" colSpan="7" textAlign="center" py="2" alignContent="center">
-									<Text fontSize={["lg", "lg", "lg", "2xl"]} fontWeight="bold">Essentials - 3D</Text>
-									<Separator maxW="xs" mx="auto" borderColor="#000" my="2" />
-									<Text fontSize="sm">Most Popular. <br /> 2D & 3D design renderings <br /> Measurements and property survey <br />Site map, hardscape plan, lighting plan, plant list Material selection <br /> 3 revisions</Text>
-								</GridItem>
-
-								<GridItem colSpan="5" px="1" fontSize={["md", "md", "lg", "2xl"]} fontWeight="bold" textAlign="center" alignContent="center">
-									<Text>Turnaround: ~6 weeks</Text>
-									<Text>Front OR Back</Text>
-									<Text>Full Property</Text>
-								</GridItem>
-							</Grid>
-
-							<Grid mb="3" _hover={{ bgColor: "rgba(140,195,66,0.2)" }} transition="0.2s ease" w="full" templateColumns="repeat(12, 1fr)" minH="44">
-								<GridItem px="2" bgColor="rgba(0,0,0,0.05)" colSpan="7" textAlign="center" py="2" alignContent="center">
-									<Text fontSize={["lg", "lg", "lg", "2xl"]} fontWeight="bold">Premium - Outdoor Transformation</Text>
-									<Separator maxW="xs" mx="auto" borderColor="#000" my="2" />
-									<Text fontSize="sm">Everything thats included in ‘Essentials 3D’ <br /> + Design new home exterior, paint, windows, doors, roof & more’ <br />+ Custom, shoppable furniture, appliance & decor selections’ <br /> + Contractor build support’ <br />+ 4 revisions</Text>
-								</GridItem>
-
-								<GridItem px="1" fontSize={["md", "md", "lg", "2xl"]} fontWeight="bold" colSpan="5" textAlign="center" alignContent="center">
-									<Text>Turnaround: ~6-8 weeks</Text>
-									<Text>Front OR Back</Text>
-									<Text>Full Property</Text>
-								</GridItem>
-							</Grid>
-
-							<Grid _hover={{ bgColor: "rgba(140,195,66,0.2)" }} transition="0.2s ease" w="full" templateColumns="repeat(12, 1fr)" minH="44">
-								<GridItem px="2" bgColor="rgba(0,0,0,0.05)" colSpan="7" textAlign="center" py="2" alignContent="center">
-									<Text fontSize={["lg", "lg", "lg", "2xl"]} fontWeight="bold">Custom Pricing</Text>
-									<Separator maxW="xs" mx="auto" borderColor="#000" my="2" />
-									<Text fontSize="sm">Properties over 1/2 acre <br /> Properties with unusual terrain or steep inclines/hills <br /> Projects needing a brand new pool design (refinishing existing pools can be done with normal package) <br /> Commercial property</Text>
-								</GridItem>
-
-								<GridItem colSpan="5" px="1" fontSize={["md", "md", "lg", "2xl"]} fontWeight="bold" textAlign="center" alignContent="center">
-									<Text fontStyle="italic">Schedule Call <br /> with Designer</Text>
-								</GridItem>
-							</Grid>
-						</GridItem>
-					</Grid>
-				</Box>
-
-				<Box px="10" h="fit-content">
+				{/* <Box px="10" h="fit-content">
 					<Box position="relative" borderRadius="15px" mt="40" maxW="6xl" mx="auto" bgSize="cover" bgImage="url('https://images.unsplash.com/photo-1460533893735-45cea2212645?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
 						<Flex flexDirection="column" justifyItems="center" color="whitesmoke" borderRadius="15px" maxW="full" bgGradient="linear-gradient(to bottom right, rgba(0,0,0,0.8), rgba(0,0,0,0.2))" px={[10, 10, 10, 24]} py="20">
 						<Stack direction={["column", "", "", "row"]} alignItems="center" gap="5" w="full">
@@ -245,7 +185,7 @@ export default function Home() {
 						</Stack>
 						</Flex>
 					</Box>
-				</Box>
+				</Box> */}
 
 
 				<Box my="44">
@@ -689,15 +629,15 @@ export default function Home() {
 
 					<Container maxW="6xl" mt="20">
 						<Stack direction={["column", "", "row", "row"]} alignItems="start" h="fit-content">
-							<Text fontSize={["9xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">15</Text>
+							<Text fontSize={["8xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">15</Text>
 							<Text fontSize="2xl" mt={["0", "", "1.5em", "3em"]} fontWeight="bold">% Avg Increase <br /> In Home Value</Text>
 						</Stack>
 						<Stack mt={["0", "", "-7em", "-17em"]} direction={["column", "", "row", "row"]} alignItems="start" h="fit-content" ml={[0, 0, "auto", "auto"]} w="fit-content">
-							<Text fontSize={["9xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">297</Text>
+							<Text fontSize={["8xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">297</Text>
 							<Text fontSize="2xl" mt={["0", "", "1.5em", "3em"]} fontWeight="bold">Breathtaking <br /> Spaces Created</Text>
 						</Stack>
 						<Stack mt={["0", "", "-2em", "-5em"]} direction={["column", "", "row", "row"]} alignItems="start" h="fit-content" w="fit-content" mx={[0, 0, "auto", "auto"]}>
-							<Text fontSize={["9xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">14,567</Text>
+							<Text fontSize={["8xl", "", "", "14em"]} color="#8cc342" fontWeight="bold">14,567</Text>
 							<Box>
 								<Text fontSize="2xl" mt={["0", "", "1.5em", "3em"]} fontWeight="bold">Hydrangeas Planted*</Text>
 								<Text fontSize="xl" fontStyle="italic">*Guesstimate. We don’t actually count.</Text>
@@ -742,7 +682,7 @@ export default function Home() {
 									<Google color="#e8414b"  fontSize="xl" />
 									<Text fontWeight="bold" color="#e8414b" textTransform="uppercase" textAlign="center">Google Rating</Text>	
 								</Stack>
-								<Text color="#e8414b" textTransform="uppercase" textAlign="center">4.3 Stars</Text>
+								<Text color="#e8414b" textTransform="uppercase" textAlign="center">5 Stars</Text>
 							</Stack>
 
 							<Stack direction="column" alignItems="center">
@@ -765,15 +705,30 @@ export default function Home() {
 						</SimpleGrid>
 
 						<SimpleGrid columns={[1, 1, 2]} gap="10" mt="10">
-							<Box shadow="2xl" py="5" px="10" borderRadius="lg">
-								<Text fontSize="lg" fontWeight="bold">"Lorem ipsum dolor sit amet..."</Text>
+							<Box h="fit-content" shadow="2xl" py="5" px="10" borderRadius="lg">
+								<Text fontSize="lg" fontWeight="bold">"The owner makes you feel like you’re..."</Text>
 
-								<Text my="10">consectetur adipiscing elit. Donec et massa non metus gravida sagittis. Phasellus nunc sapien, hendrerit finibus tincidunt sit amet, varius in orci. Maecenas a nibh fringilla, condimentum neque sed, laoreet mauris.</Text>
+								<ReadMore text="The owner makes you feel like you’re his only client. I had him do some cleaning of my yard last fall and again in the spring.  My front yard was in bad shape but he did a great job with getting it prepared for the warm weather.  We had a lot of weeds and whatever he did, we did not have as many weeds come up for the summer months. Would recommend this lawncare service. Hard working and efficient." />
 							
 								<Stack direction="row" alignItems="center" justify="space-between">
 									<Box>
-										<Text fontWeight="bold">- John Doe</Text>
-										<Text color="blackAlpha.800">City Name, State</Text>
+										<Text fontWeight="bold">- Nancy K.</Text>
+										<Text color="blackAlpha.800">Lake County, Indiana</Text>
+									</Box>
+
+									<Text fontWeight="bold"><Text as={Link} href="/" _target="blank" color="blackAlpha.700" transition="0.2s ease" _hover={{ color: "blackAlpha.900" }} textDecor="underline">Read Reviews</Text> on <GoogleFullColor fontSize="2xl" /></Text>
+								</Stack>
+							</Box>
+
+							<Box h="fit-content" shadow="2xl" py="5" px="10" borderRadius="lg">
+								<Text fontSize="lg" fontWeight="bold">"Mike & his team are awesome and truly care..."</Text>
+
+								<ReadMore text="Mike & his team are awesome and truly care about all the aspects of the work they do. They are great at outdoor water features and lawn care. I highly recommend Hazelwood Outdoors!!" />
+							
+								<Stack direction="row" alignItems="center" justify="space-between">
+									<Box>
+										<Text fontWeight="bold">- Joe L.</Text>
+										<Text color="blackAlpha.800">Lake County, Indiana</Text>
 									</Box>
 
 									<Text fontWeight="bold"><Text as={Link} href="/" _target="blank" color="blackAlpha.700" transition="0.2s ease" _hover={{ color: "blackAlpha.900" }} textDecor="underline">Read Reviews</Text> on <GoogleFullColor fontSize="2xl" /></Text>
@@ -796,24 +751,12 @@ export default function Home() {
 							</Box>
 
 							<Box shadow="2xl" py="5" px="10" borderRadius="lg">
-								<Text fontSize="lg" fontWeight="bold">"Lorem ipsum dolor sit amet..."</Text>
+								<Text fontSize="lg" fontWeight="bold">"Hazel Wood Lawn Care is an absolute gem..."</Text>
 
-								<Text my="10">consectetur adipiscing elit. Donec et massa non metus gravida sagittis. Phasellus nunc sapien, hendrerit finibus tincidunt sit amet, varius in orci. Maecenas a nibh fringilla, condimentum neque sed, laoreet mauris.</Text>
-							
-								<Stack direction="row" alignItems="center" justify="space-between">
-									<Box>
-										<Text fontWeight="bold">- John Doe</Text>
-										<Text color="blackAlpha.800">City Name, State</Text>
-									</Box>
-
-									<Text fontWeight="bold"><Text as={Link} href="/" _target="blank" color="blackAlpha.700" transition="0.2s ease" _hover={{ color: "blackAlpha.900" }} textDecor="underline">Read Reviews</Text> on <GoogleFullColor fontSize="2xl" /></Text>
-								</Stack>
-							</Box>
-
-							<Box shadow="2xl" py="5" px="10" borderRadius="lg">
-								<Text fontSize="lg" fontWeight="bold">"Lorem ipsum dolor sit amet..."</Text>
-
-								<Text my="10">consectetur adipiscing elit. Donec et massa non metus gravida sagittis. Phasellus nunc sapien, hendrerit finibus tincidunt sit amet, varius in orci. Maecenas a nibh fringilla, condimentum neque sed, laoreet mauris.</Text>
+								<ReadMore text="Hazel Wood Lawn Care is an absolute gem when it comes to lawn care services. Mike, the owner, is a shining example of what a business owner should be - dedicated, attentive, and always willing to go above and beyond for his customers. His commitment to excellence is truly commendable.
+What sets Hazel Wood apart is not just Mike, but also the exceptional team of employees he has assembled. They are the backbone of this operation and bring the highest level of professionalism and expertise to every project. Mike's team doesn't just meet your expectations; they consistently exceed them.
+From the moment you engage with Hazel Wood Lawn Care, you'll experience the difference. Their attention to detail, from the initial consultation to the final, immaculate result, is unparalleled. They truly care about the health and appearance of your lawn.
+If you're looking for lawn care that is more than just a service, but a partnership in achieving the lawn of your dreams, Hazel Wood is the company to call. They make your satisfaction their top priority, and their results speak for themselves. For a lush, well-maintained lawn that will be the envy of your neighborhood, Hazel Wood Lawn Care is the best choice, hands down. Thank you again Hazel Wood!" />
 							
 								<Stack direction="row" alignItems="center" justify="space-between">
 									<Box>
