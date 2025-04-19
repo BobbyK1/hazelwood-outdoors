@@ -3,18 +3,12 @@ import { Build, Check, Conversation, Design, Down, External, Facebook, Google, G
 import { Button } from "./components/ui/button";
 import Link from "next/link";
 import NextImage from 'next/image'
-import { Nothing_You_Could_Do } from 'next/font/google'
 import AnimatedSteps from "./components/ui/animated-steps";
 import { Avatar } from "./components/ui/avatar";
 import StarGroup from "./components/ui/star-group";
 import { playfair } from "./fonts/playfair-display";
 import ReadMore from "./components/ui/read-more";
-
-const nothing = Nothing_You_Could_Do({
-	subsets: ['latin'],
-	display: 'swap',
-	weight: ['400']
-})
+import { nothing } from "./fonts/nothing";
 
 export default function Home() {
 	return (
@@ -83,11 +77,11 @@ export default function Home() {
 			<Box pb="32" pt="20" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 2%, #fff 100%)">
 				<Container maxW="6xl">
 					<Box pos="relative">
-						<Box pos="absolute" top={0} left={0} right={0} bottom={0}>
-							<Text fontSize={["7em", "", "7.5em", "10em"]} mt={[-4, 4, 4, 0]} color="blackAlpha.100" lineHeight="0.8" fontWeight="bold" className={playfair.className} textAlign="center">HAZELWOOD</Text>
+						<Box pos="absolute" top={-5} left={0} right={0} bottom={0}>
+							<Text fontSize={["7em", "", "7.5em", "10em"]} mt={[-4, 4, 4, 0]} color="blackAlpha.50" lineHeight="0.8" fontWeight="bold" className={playfair.className} textAlign="center">HAZELWOOD</Text>
 						</Box>
-						<Stack id="about" mt="4" direction="row" gap="5" alignItems="center" mb="14" mx="auto" w="fit-content">
-							<Separator  borderColor="#8cc342" maxW="20" minW="20" />
+						<Stack id="about" mt="4" direction="row" gap="5" alignItems="center" mb="2" mx="auto" w="fit-content">
+							<Separator borderColor="#8cc342" maxW="20" minW="20" />
 							<Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase" textWrap="nowrap">About Us</Text>
 							<Separator borderColor="#8cc342" maxW="20" minW="20" />
 						</Stack>
@@ -95,7 +89,7 @@ export default function Home() {
 					<Grid borderRadius="5px" px="2" templateColumns="repeat(2, 1fr)" gap="10">
 						<GridItem colSpan={2}>
 							<Heading textAlign="center" as="h2" fontWeight="bold" fontSize={["3xl", "5xl"]} textTransform="uppercase" lineHeight="1.1">Hazelwood Outdoors</Heading>
-							<Text maxW="4xl" mx="auto" textAlign="center" my="20" fontSize="md">We design and maintain landscapes that bring beauty, value, and connection to our community. By creating spaces where families gather, neighbors bond, and memories are made, we make life simpler and more meaningful for those we serve. We honor our commitments, prioritize safety, and make it easy to work with us.
+							<Text maxW="4xl" mx="auto" textAlign="center" mb="20" mt="24" fontSize="md">We design and maintain landscapes that bring beauty, value, and connection to our community. By creating spaces where families gather, neighbors bond, and memories are made, we make life simpler and more meaningful for those we serve. We honor our commitments, prioritize safety, and make it easy to work with us.
 							<br /> <br />
 							We invest in people helping our employees achieve their dreams, support their families, and build better lives. Through deep partnerships, skilled craftsmanship, and shared success, we create opportunities for growth, happiness, and connection. Together, we aim to inspire trust, celebrate life, and reconnect the world one project at a time.</Text>
 						
@@ -705,7 +699,7 @@ export default function Home() {
 						</SimpleGrid>
 
 						<SimpleGrid columns={[1, 1, 2]} gap="10" mt="10">
-							<Box h="fit-content" shadow="2xl" py="5" px="10" borderRadius="lg">
+							<Box shadow="2xl" py="5" px="10" maxH="fit-content" borderRadius="lg">
 								<Text fontSize="lg" fontWeight="bold">"The owner makes you feel like you’re..."</Text>
 
 								<ReadMore text="The owner makes you feel like you’re his only client. I had him do some cleaning of my yard last fall and again in the spring.  My front yard was in bad shape but he did a great job with getting it prepared for the warm weather.  We had a lot of weeds and whatever he did, we did not have as many weeds come up for the summer months. Would recommend this lawncare service. Hard working and efficient." />
@@ -720,7 +714,7 @@ export default function Home() {
 								</Stack>
 							</Box>
 
-							<Box h="fit-content" shadow="2xl" py="5" px="10" borderRadius="lg">
+							<Box shadow="2xl" py="5" px="10" maxH="fit-content" borderRadius="lg">
 								<Text fontSize="lg" fontWeight="bold">"Mike & his team are awesome and truly care..."</Text>
 
 								<ReadMore text="Mike & his team are awesome and truly care about all the aspects of the work they do. They are great at outdoor water features and lawn care. I highly recommend Hazelwood Outdoors!!" />
@@ -735,10 +729,13 @@ export default function Home() {
 								</Stack>
 							</Box>
 
-							<Box shadow="2xl" py="5" px="10" borderRadius="lg">
-								<Text fontSize="lg" fontWeight="bold">"Lorem ipsum dolor sit amet..."</Text>
+							<Box shadow="2xl" py="5" px="10" maxH="fit-content" borderRadius="lg">
+								<Text fontSize="lg" fontWeight="bold">TODO</Text>
 
-								<Text my="10">consectetur adipiscing elit. Donec et massa non metus gravida sagittis. Phasellus nunc sapien, hendrerit finibus tincidunt sit amet, varius in orci. Maecenas a nibh fringilla, condimentum neque sed, laoreet mauris.</Text>
+								<ReadMore text="Hazel Wood Lawn Care is an absolute gem when it comes to lawn care services. Mike, the owner, is a shining example of what a business owner should be - dedicated, attentive, and always willing to go above and beyond for his customers. His commitment to excellence is truly commendable.
+What sets Hazel Wood apart is not just Mike, but also the exceptional team of employees he has assembled. They are the backbone of this operation and bring the highest level of professionalism and expertise to every project. Mike's team doesn't just meet your expectations; they consistently exceed them.
+From the moment you engage with Hazel Wood Lawn Care, you'll experience the difference. Their attention to detail, from the initial consultation to the final, immaculate result, is unparalleled. They truly care about the health and appearance of your lawn.
+If you're looking for lawn care that is more than just a service, but a partnership in achieving the lawn of your dreams, Hazel Wood is the company to call. They make your satisfaction their top priority, and their results speak for themselves. For a lush, well-maintained lawn that will be the envy of your neighborhood, Hazel Wood Lawn Care is the best choice, hands down. Thank you again Hazel Wood!" />
 							
 								<Stack direction="row" alignItems="center" justify="space-between">
 									<Box>
@@ -750,7 +747,7 @@ export default function Home() {
 								</Stack>
 							</Box>
 
-							<Box shadow="2xl" py="5" px="10" borderRadius="lg">
+							<Box shadow="2xl" py="5" px="10" maxH="fit-content" borderRadius="lg">
 								<Text fontSize="lg" fontWeight="bold">"Hazel Wood Lawn Care is an absolute gem..."</Text>
 
 								<ReadMore text="Hazel Wood Lawn Care is an absolute gem when it comes to lawn care services. Mike, the owner, is a shining example of what a business owner should be - dedicated, attentive, and always willing to go above and beyond for his customers. His commitment to excellence is truly commendable.

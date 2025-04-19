@@ -1,3 +1,4 @@
+import { nothing } from "@/app/fonts/nothing";
 import { playfair } from "@/app/fonts/playfair-display";
 import { Box, Button, Center, Container, Flex, Grid, GridItem, Heading, Input, Separator, SimpleGrid, Stack, Text, Textarea } from "@chakra-ui/react";
 import Image from "next/image";
@@ -7,7 +8,7 @@ export default function DesignBuild() {
 
     return (
         <Box py="20" color="blackAlpha.800" fontWeight="medium" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 2%, #fff 100%)">
-            <Container>
+            {/* <Container>
                 <SimpleGrid columns={[1, 1, 1, 2]} gap="10">
                     <GridItem alignContent="center">
                         <Heading as="h2" fontSize="5xl" fontWeight="bold" mb="5" className={playfair.className}>Design • Build</Heading>
@@ -21,66 +22,122 @@ export default function DesignBuild() {
 
                         <Text lineHeight="1.8">Landscape Design is a creative process that brings to life the dreams of homeowners. Each homeowner has a unique vision for their property and with the help of an expert landscape designer, this vision can be brought to life. The first step in the process is an on-site assessment to understand the client’s vision, lifestyle and requirements that will give you a clear idea of what is needed.</Text>
                     </GridItem>
-
-                    <Image width="600" height="300" src="/drawing.jpg" shadow="sm" />
                 </SimpleGrid>
-            </Container>
+            </Container> */}
 
-            <Box mt="32">
-                <Stack id="about" display={["none", "none", "flex"]} direction="row" gap="5" alignItems="center" mb="10" mx="auto" w="fit-content">
+            <Box mt="8">
+                <Box pos="relative">
+                    <Box pos="absolute" top={-10} left={0} right={0} bottom={0}>
+                        <Text fontSize={["7em", "", "7.5em", "10em"]} mt={[-4, 4, 4, 0]} color="blackAlpha.50" lineHeight="0.8" fontWeight="bold" className={playfair.className} textAlign="center">DESIGN</Text>
+                    </Box>
+                    <Text textAlign="center" fontWeight="bold" fontSize="4xl" color="black">Your Outdoor Space <Text as="span" color="#8cc342" className={nothing.className} fontSize="5xl">Reimagined</Text></Text>
+                </Box>
+                {/* <Stack id="about" direction="row" gap="5" alignItems="center" mb="10" mx="auto" w="fit-content">
                     <Separator borderColor="#8cc342" maxW="32" minW="32" />
                     <Text fontSize="2xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Design</Text>
                     <Separator borderColor="#8cc342" maxW="32" minW="32" />
+                </Stack> */}
+{/* 
+                <Text textAlign="center" fontWeight="bold" fontSize="4xl" color="black">Your Outdoor Space <Text as="span" color="#8cc342" className={nothing.className} fontSize="5xl">Reimagined</Text></Text> */}
+
+                <Text textAlign="center" px="2" mt="7" maxW="4xl" mx="auto">Whether you’ve got 3 acres to work with or an intimate patio space, we’ve crafted our process to make sure our designs maximize the potential of your space. Scroll below to learn just how easy our process is.</Text>
+            
+                <Text textAlign="center" mt="24" fontWeight="bold" color="black" fontSize="2xl">OUR SIX STEP DESIGN PROCESS</Text>
+
+                <Text textAlign="center" px="2" mt="7" maxW="4xl" mx="auto">Our process is the same for every client. It all starts with a discovery consultation to  get an understanding of what you are looking for in your new space.</Text>
+
+                <Container maxW="9xl" mt="14">
+                    <SimpleGrid columns={[1, 1, 1, 2]} gap="5">
+                        <Box p="5" borderWidth="thin" borderRadius="10px">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 1 - DISCOVERY CALL</Text>
+
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">First, we will schedule an on-site meeting with our design team to discuss your  upcoming project and listen to your needs, requirements, and budget for your  project.</Text>
+                        </Box>
+
+                        <Box p="5" borderWidth="thin" borderRadius="10px" bgColor="blackAlpha.50">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 2 - PROPOSAL & DEPOSIT</Text>
+
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">After the consultation, we will send you a design proposal based on your new  project along with a deposit amount to secure our working with you.</Text>
+                        </Box>
+
+                        <Box p="5" borderWidth="thin" borderRadius="10px" bgColor="blackAlpha.50">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 3 - BASE MODEL</Text>
+
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">After you submit your deposit, we will have our design team build out the base  model of your home and existing exterior space. During this time we will also  schedule a Zoom video call with you to go over early concepts & inspiration for your new design.</Text>
+                        </Box>
+
+                        <Box p="5" borderWidth="thin" borderRadius="10px">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 4 - DESIGN MAGIC</Text>
+
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">This is where the magic happens and we begin designing your new luxury,  outdoor space. Every conversation we’ve had with you will be taken into  consideration as we create the best design possible for your space.</Text>
+                        </Box>
+
+                        <Box p="5" borderWidth="thin" borderRadius="10px">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 5 - DESIGN REVEAL</Text>
+
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">Once your initial design is completed we will hop on a zoom call to give you a 3D,  virtual tour of your new outdoor space. During this call we will discuss any  revisions you would like us to make to the design (and we might even make a few changes live).</Text>
+                        </Box>
+
+                        <Box p="5" borderWidth="thin" borderRadius="10px" bgColor="blackAlpha.50">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 6 - DESIGN FINALIZATION</Text>
+
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">Finally, we will apply any revisions you requested to the design, and create the  proper documents to send over to your construction team. Now the build-out of  your new private resort design can begin!</Text>
+                        </Box>
+                    </SimpleGrid>
+                </Container>
+                
+                <Stack id="about" direction="row" gap="5" alignItems="center" mb="10" mt="24" mx="auto" w="fit-content">
+                    <Separator borderColor="#8cc342" maxW="32" minW="32" />
+                    <Text fontSize="3xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Build</Text>
+                    <Separator borderColor="#8cc342" maxW="32" minW="32" />
                 </Stack>
 
-                <Text textAlign="center" fontWeight="bold" fontSize="4xl" color="black">Your Outdoor Space Reimagined</Text>
+                <Text textAlign="center" fontWeight="bold" fontSize="4xl" color="black">Your Outdoor Space <Text as="span" color="#8cc342" className={nothing.className} fontSize="5xl">Transformed</Text></Text>
 
-                <Text textAlign="center" mt="7">Whether you’ve got 3 acres to work with or an intimate patio space, we’ve crafted our process to make sure our <br /> designs maximize the potential of your space. Scroll below to learn just how easy our process is.</Text>
+                <Text textAlign="center" px="2" mt="7" maxW="4xl" mx="auto">The design has been fully completed, and all the plans have received your official approval. Now, with everything in place, it's finally time to roll up our sleeves and begin the work ahead.</Text>
             
-                <Text textAlign="center" mt="32" fontWeight="bold" color="black" fontSize="2xl">OUR SIX STEP DESIGN PROCESS</Text>
+                <Container maxW="9xl" mt="14">
+                    <SimpleGrid columns={[1, 1, 1, 2]} gap="5">
+                        <Box p="5" borderWidth="thin" borderRadius="10px">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl" textTransform="uppercase">STEP 1 - Dig & Prepare the Site</Text>
 
-                <Text textAlign="center" mt="7">Our process is the same for every client. It all starts with a discovery <br /> consultation to get an understanding of what you are looking for in your new space.</Text>
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">We start by excavating the area to the proper depth based on your patio’s design. Then we compact the soil to create a strong, even surface. This step sets the stage for everything that follows—and ensures long-term durability.</Text>
+                        </Box>
 
-                <Container maxW="4xl" mt="14">
-                    <Box p="5" borderWidth="thin" borderRadius="10px">
-                        <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 1 - DISCOVERY CALL</Text>
+                        <Box p="5" borderWidth="thin" borderRadius="10px" bgColor="blackAlpha.50">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl" textTransform="uppercase">STEP 2 - Build the Base</Text>
 
-                        <Text textAlign="center" color="blackAlpha.700" mt="5" fontWeight="normal">First, we will schedule an on-site meeting with our design team to discuss your <br /> upcoming project and listen to your needs, requirements, and budget for your <br /> project.</Text>
-                    </Box>
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">A multi-layered base of crushed stone is added and compacted in stages. This creates a stable, load-bearing foundation that resists shifting, settling, and weather damage. It’s the key to a patio that looks great for years to come.</Text>
+                        </Box>
 
-                    <Box mt="5" p="5" borderWidth="thin" borderRadius="10px" bgColor="blackAlpha.50">
-                        <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 2 - PROPOSAL & DEPOSIT</Text>
+                        <Box p="5" borderWidth="thin" borderRadius="10px" bgColor="blackAlpha.50">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl" textTransform="uppercase">STEP 3 - Set the Borders</Text>
 
-                        <Text textAlign="center" color="blackAlpha.700" mt="5" fontWeight="normal">After the consultation, we will send you a design proposal based on your new <br /> project along with a deposit amount to secure our working with you.</Text>
-                    </Box>
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">Edge restraints are installed around the perimeter to hold the pavers tightly in place. They help prevent movement, maintain the shape of your patio, and give it that clean, finished edge that makes all the difference.</Text>
+                        </Box>
 
-                    <Box mt="5" p="5" borderWidth="thin" borderRadius="10px">
-                        <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 3 - BASE MODEL</Text>
+                        <Box p="5" borderWidth="thin" borderRadius="10px">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl" textTransform="uppercase">STEP 4 - Screed the Sand Layer</Text>
 
-                        <Text textAlign="center" color="blackAlpha.700" mt="5" fontWeight="normal">After you submit your deposit, we will have our design team build out the base <br /> model of your home and existing exterior space. During this time we will also <br /> schedule a Zoom video call with you to go over early concepts & inspiration for <br /> your new design.</Text>
-                    </Box>
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">We apply a 1-inch layer of smooth, level bedding sand—this is the cushion that allows each paver to sit just right. It’s carefully screeded for precision and prepared immediately before laying the pavers.</Text>
+                        </Box>
 
-                    <Box mt="5" p="5" borderWidth="thin" borderRadius="10px" bgColor="blackAlpha.50">
-                        <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 4 - DESIGN MAGIC</Text>
+                        <Box p="5" borderWidth="thin" borderRadius="10px">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl" textTransform="uppercase">STEP 5 - Lay the Pavers</Text>
 
-                        <Text textAlign="center" color="blackAlpha.700" mt="5" fontWeight="normal">This is where the magic happens and we begin designing your new luxury, <br /> outdoor space. Every conversation we’ve had with you will be taken into <br /> consideration as we create the best design possible for your space.</Text>
-                    </Box>
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">Pavers are installed one by one, following your chosen pattern and design. We mix from multiple pallets for a natural color blend and maintain consistent spacing throughout. It’s a hands-on process that brings your vision to life.</Text>
+                        </Box>
 
-                    <Box mt="5" p="5" borderWidth="thin" borderRadius="10px">
-                        <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 5 - DESIGN REVEAL</Text>
+                        <Box p="5" borderWidth="thin" borderRadius="10px" bgColor="blackAlpha.50">
+                            <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl" textTransform="uppercase">STEP 6 - Lock It In & Final Touches</Text>
 
-                        <Text textAlign="center" color="blackAlpha.700" mt="5" fontWeight="normal">Once your initial design is completed we will hop on a zoom call to give you a 3D, <br /> virtual tour of your new outdoor space. During this call we will discuss any <br /> revisions you would like us to make to the design (and we might even make a few changes live).</Text>
-                    </Box>
-
-                    <Box mt="5" p="5" borderWidth="thin" borderRadius="10px" bgColor="blackAlpha.50">
-                        <Text textAlign="center" fontWeight="bold" color="black" fontSize="xl">STEP 6 - DESIGN FINALIZATION</Text>
-
-                        <Text textAlign="center" color="blackAlpha.700" mt="5" fontWeight="normal">Finally, we will apply any revisions you requested to the design, and create the <br /> proper documents to send over to your construction team. Now the build-out of <br /> your new private resort design can begin!</Text>
-                    </Box>
+                            <Text textAlign="center" color="blackAlpha.700" mt="5" fontSize="sm" fontWeight="normal">Once everything’s in place, we compact the surface and sweep in joint sand to lock the pavers together. If polymeric sand is used, we activate it with water for a bonded, weed-resistant finish. Then we clean up the site and walk you through your brand new patio.</Text>
+                        </Box>
+                    </SimpleGrid>
                 </Container>
                 
 
-                <Box px={[2, 2, 2, 10]} mt="20">
+                {/* <Box px={[2, 2, 2, 10]} mt="20">
                     <Grid minH="20" templateColumns="repeat(12, 1fr)" gap="5">
                         <GridItem display={["none", "none", "none", "grid"]} colSpan="4" alignContent="center" justifyContent="center">
                             <Image width={600} height={400} src="/drawing.jpg" />
@@ -181,7 +238,7 @@ export default function DesignBuild() {
                     <Center>
                         <Button w="fit-content" variant="solid" bgColor="rgba(140,195,66,0.9)" _hover={{ bgColor: "rgba(140,195,66,1)" }} color="whitesmoke" size="2xl">Build-Only Serivce</Button>
                     </Center>
-                </Box>
+                </Box> */}
             </Box>
         </Box>
     )
