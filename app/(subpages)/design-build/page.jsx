@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function DesignBuild() {
 
     return (
-        <Box py="20" color="blackAlpha.800" fontWeight="medium" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 2%, #fff 100%)">
+        <Box pb="20" color="blackAlpha.800" fontWeight="medium" bg="linear-gradient(180deg, #e9efe5 0%, #fffbf9 2%, #fff 100%)">
             {/* <Container>
                 <SimpleGrid columns={[1, 1, 1, 2]} gap="10">
                     <GridItem alignContent="center">
@@ -25,9 +25,9 @@ export default function DesignBuild() {
                 </SimpleGrid>
             </Container> */}
 
-            <Box mt="8">
-                <Box pos="relative">
-                    <Box pos="absolute" top={-10} left={0} right={0} bottom={0}>
+            <Box>
+                <Box pos="relative" py="20">
+                    <Box pos="absolute" top={12} left={0} right={0} bottom={0}>
                         <Text fontSize={["7em", "", "7.5em", "10em"]} mt={[-4, 4, 4, 0]} color="blackAlpha.50" lineHeight="0.8" fontWeight="bold" className={playfair.className} textAlign="center">DESIGN</Text>
                     </Box>
                     <Text textAlign="center" fontWeight="bold" fontSize="4xl" color="black">Your Outdoor Space <Text as="span" color="#8cc342" className={nothing.className} fontSize="5xl">Reimagined</Text></Text>
@@ -85,14 +85,13 @@ export default function DesignBuild() {
                         </Box>
                     </SimpleGrid>
                 </Container>
-                
-                <Stack id="about" direction="row" gap="5" alignItems="center" mb="10" mt="24" mx="auto" w="fit-content">
-                    <Separator borderColor="#8cc342" maxW="32" minW="32" />
-                    <Text fontSize="3xl" fontWeight="semibold" color="#8cc342" textTransform="uppercase">Build</Text>
-                    <Separator borderColor="#8cc342" maxW="32" minW="32" />
-                </Stack>
 
-                <Text textAlign="center" fontWeight="bold" fontSize="4xl" color="black">Your Outdoor Space <Text as="span" color="#8cc342" className={nothing.className} fontSize="5xl">Transformed</Text></Text>
+                <Box pos="relative" my="20">
+                    <Box pos="absolute" top={-10} left={0} right={0} bottom={0}>
+                        <Text fontSize={["7em", "", "7.5em", "10em"]} mt={[-4, 4, 4, 0]} color="blackAlpha.50" lineHeight="0.8" fontWeight="bold" className={playfair.className} textAlign="center">Build</Text>
+                    </Box>
+                    <Text textAlign="center" fontWeight="bold" fontSize="4xl" color="black">Your Outdoor Space <Text as="span" color="#8cc342" className={nothing.className} fontSize="5xl">Transformed</Text></Text>
+                </Box>
 
                 <Text textAlign="center" px="2" mt="7" maxW="4xl" mx="auto">The design has been fully completed, and all the plans have received your official approval. Now, with everything in place, it's finally time to roll up our sleeves and begin the work ahead.</Text>
             
